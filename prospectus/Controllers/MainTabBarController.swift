@@ -11,7 +11,7 @@ import UIKit
 class MainTabBarController: UITabBarController {
 
     let newsTabBarItem:UITabBarItem = UITabBarItem(title: "News", image: UIImage(named: "news_dark"), selectedImage: UIImage(named: "news_light"))
-    let coursesTabBarItem:UITabBarItem = UITabBarItem(title: "Courses", image: UIImage(named: "courses_dark"), selectedImage: UIImage(named: "courses_light"))
+    let coursesTabBarItem:UITabBarItem = UITabBarItem(title: "Courses", image: UIImage(named: "hat_dark"), selectedImage: UIImage(named: "hat_light"))
     let favouritesTabBarItem:UITabBarItem = UITabBarItem(title: "Favourites", image: UIImage(named: "favourites_dark"), selectedImage: UIImage(named: "favourites_light"))
     
     override func viewDidLoad() {
