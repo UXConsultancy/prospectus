@@ -13,6 +13,8 @@
 		0751044B20FDD7E700998B87 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751044A20FDD7E700998B87 /* NewsTableViewController.swift */; };
 		0751044D20FDD80200998B87 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751044C20FDD80200998B87 /* CoursesViewController.swift */; };
 		0751044F20FDD80F00998B87 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751044E20FDD80F00998B87 /* FavouritesViewController.swift */; };
+		07E66A9720FF8897001EAF24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E66A9620FF8897001EAF24 /* GoogleService-Info.plist */; };
+		E70A51C8776A70EB5065533A /* Pods_prospectus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25021521FBD5C99BA867E797 /* Pods_prospectus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		0751044A20FDD7E700998B87 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		0751044C20FDD80200998B87 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		0751044E20FDD80F00998B87 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		07E66A9620FF8897001EAF24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		21CDA42234692C7CB5B3A40A /* Pods-prospectus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prospectus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prospectus/Pods-prospectus.debug.xcconfig"; sourceTree = "<group>"; };
+		25021521FBD5C99BA867E797 /* Pods_prospectus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_prospectus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92922C6C2B6EB92C825D5BDC /* Pods-prospectus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prospectus.release.xcconfig"; path = "Pods/Target Support Files/Pods-prospectus/Pods-prospectus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E70A51C8776A70EB5065533A /* Pods_prospectus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				0751043020FD2F4600998B87 /* prospectus */,
 				0751042F20FD2F4600998B87 /* Products */,
+				D3DF93662B74B46707B2E5A9 /* Pods */,
+				2FA4476FFE431C26A5CC781E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +71,7 @@
 				0751044320FDD07B00998B87 /* Views */,
 				0751043820FD2F4600998B87 /* Assets.xcassets */,
 				0751043D20FD2F4600998B87 /* Info.plist */,
+				07E66A9620FF8897001EAF24 /* GoogleService-Info.plist */,
 			);
 			path = prospectus;
 			sourceTree = "<group>";
@@ -91,6 +101,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		2FA4476FFE431C26A5CC781E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25021521FBD5C99BA867E797 /* Pods_prospectus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3DF93662B74B46707B2E5A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21CDA42234692C7CB5B3A40A /* Pods-prospectus.debug.xcconfig */,
+				92922C6C2B6EB92C825D5BDC /* Pods-prospectus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0751044020FD2F4600998B87 /* Build configuration list for PBXNativeTarget "prospectus" */;
 			buildPhases = (
+				D298EADF839006E50AAF23B2 /* [CP] Check Pods Manifest.lock */,
 				0751042A20FD2F4600998B87 /* Sources */,
 				0751042B20FD2F4600998B87 /* Frameworks */,
 				0751042C20FD2F4600998B87 /* Resources */,
+				6F4BE915425A65917E6B29DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,10 +179,66 @@
 			buildActionMask = 2147483647;
 			files = (
 				0751043920FD2F4600998B87 /* Assets.xcassets in Resources */,
+				07E66A9720FF8897001EAF24 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F4BE915425A65917E6B29DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-prospectus/Pods-prospectus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-prospectus/Pods-prospectus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D298EADF839006E50AAF23B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-prospectus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0751042A20FD2F4600998B87 /* Sources */ = {
@@ -287,6 +372,7 @@
 		};
 		0751044120FD2F4600998B87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21CDA42234692C7CB5B3A40A /* Pods-prospectus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -305,6 +391,7 @@
 		};
 		0751044220FD2F4600998B87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92922C6C2B6EB92C825D5BDC /* Pods-prospectus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
