@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         
         // Create ViewControllers
@@ -25,8 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Load main window
         window!.rootViewController = mainTabBarController
         window!.makeKeyAndVisible()
-        
-        FirebaseApp.configure()
+
         return true
     }
 
