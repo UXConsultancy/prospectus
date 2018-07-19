@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UITableViewController {
     
     var docRef: CollectionReference!
     var articles: [QueryDocumentSnapshot]?
@@ -21,10 +21,17 @@ class WelcomeViewController: UIViewController {
         self.title = "Welcome"
         self.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        tableView.estimatedRowHeight = 312
+        tableView.rowHeight = 312 //UITableViewAutomaticDimension
+        
         
         // get data fromFirebase?
         docRef = Firestore.firestore().collection("introduction")
         getDataForIntroduction(from: docRef)
+        
+        tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "welcome")
     }
     
     func getDataForIntroduction(from: CollectionReference) {
@@ -32,12 +39,34 @@ class WelcomeViewController: UIViewController {
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                for article in querySnapshot!.documents {
-                    print("\(article.documentID) => \(article.data())")
-                }
                 self.articles = querySnapshot!.documents
+                self.tableView.reloadData()
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let a = self.articles else { return 0 }
+        return a.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "welcome", for: indexPath) as! ArticleTableViewCell
+        if let text :QueryDocumentSnapshot = self.articles?[indexPath.row] {
+            let article = text.data()
+            let t = article["title"] as! String
+            cell.articleTitle = t
+            let i = article["image"] as! String
+            cell.articleImage = UIImage(named: i)
+            
+
+        }
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 
 }
