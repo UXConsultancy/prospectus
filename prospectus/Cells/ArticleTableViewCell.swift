@@ -41,13 +41,27 @@ class ArticleTableViewCell: UITableViewCell {
         return text
     }()
     
+    var articleView: UIView = {
+        var view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.layer.borderWidth = 1.0
+//        view.layer.borderColor = UIColor.darkGray.cgColor
+        return view
+    }()
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.articleView.layer.borderWidth = 1.0
+        let opacity: CGFloat = 0.6
+        let borderColor = UIColor.darkGray
+        self.articleView.layer.borderColor = borderColor.withAlphaComponent(opacity).cgColor
+        
         // add subviews to cell
-        self.contentView.addSubview(articleImageView)
-        self.contentView.addSubview(articleTitleView)
-        self.contentView.addSubview(articleDateView)
+        self.contentView.addSubview(articleView)
+        articleView.addSubview(articleImageView)
+        articleView.addSubview(articleTitleView)
+        articleView.addSubview(articleDateView)
         
         setupViewContraints()
         let w = self.contentView.bounds.width
@@ -77,26 +91,27 @@ class ArticleTableViewCell: UITableViewCell {
     
     func setupViewContraints() {
         
+        // articleView
+        articleView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8).isActive = true
+        articleView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 8).isActive = true
+        articleView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -8).isActive = true
+        articleView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0).isActive = true
+        
         // articleImageView
-        articleImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 0).isActive = true
-        articleImageView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 8).isActive = true
-        articleImageView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -8).isActive = true
-////        articleImageView.bottomAnchor.constraint(equalTo: articleTitleView.topAnchor, constant: 8).isActive = true
+        articleImageView.topAnchor.constraint(equalTo: articleView.topAnchor, constant: 0).isActive = true
+        articleImageView.leftAnchor.constraint(equalTo: articleView.leftAnchor, constant: 0).isActive = true
+        articleImageView.rightAnchor.constraint(equalTo: articleView.rightAnchor, constant: 0).isActive = true
         articleImageView.heightAnchor.constraint(equalToConstant: 230).isActive = true
         
         // articleTitleView
         articleTitleView.topAnchor.constraint(equalTo: articleImageView.bottomAnchor, constant: 8).isActive = true
-        articleTitleView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 12).isActive = true
-        articleTitleView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -12).isActive = true
-//        articleTitleView.bottomAnchor.constraint(equalTo: articleDateView.topAnchor, constant: 0).isActive = true
-//        articleTitleView.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        articleTitleView.leftAnchor.constraint(equalTo: articleView.leftAnchor, constant: 12).isActive = true
+        articleTitleView.rightAnchor.constraint(equalTo: articleView.rightAnchor, constant: -12).isActive = true
         
         // articleDateView
-//        articleDateView.topAnchor.constraint(equalTo: articleTitleView.bottomAnchor, constant: 0).isActive = true
-        articleDateView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive = true
-        articleDateView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive = true
-//        articleDateView.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        articleDateView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -12).isActive = true
+        articleDateView.leftAnchor.constraint(equalTo: articleView.leftAnchor, constant: 12).isActive = true
+        articleDateView.rightAnchor.constraint(equalTo: articleView.rightAnchor, constant: -12).isActive = true
+        articleDateView.bottomAnchor.constraint(equalTo: articleView.bottomAnchor, constant: -8).isActive = true
         
     }
     

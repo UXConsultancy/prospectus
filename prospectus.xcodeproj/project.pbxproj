@@ -17,6 +17,7 @@
 		0779682720FF9BBF00AAB14E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779682620FF9BBF00AAB14E /* Models.swift */; };
 		0779682D20FFB50E00AAB14E /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779682C20FFB50E00AAB14E /* ArticleTableViewCell.swift */; };
 		07E66A9720FF8897001EAF24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E66A9620FF8897001EAF24 /* GoogleService-Info.plist */; };
+		07FEDEA32100E139008F25A3 /* WelcomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEDEA22100E139008F25A3 /* WelcomeDetailViewController.swift */; };
 		E70A51C8776A70EB5065533A /* Pods_prospectus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25021521FBD5C99BA867E797 /* Pods_prospectus.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		0779682620FF9BBF00AAB14E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0779682C20FFB50E00AAB14E /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		07E66A9620FF8897001EAF24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		07FEDEA22100E139008F25A3 /* WelcomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDetailViewController.swift; sourceTree = "<group>"; };
 		21CDA42234692C7CB5B3A40A /* Pods-prospectus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prospectus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prospectus/Pods-prospectus.debug.xcconfig"; sourceTree = "<group>"; };
 		25021521FBD5C99BA867E797 /* Pods_prospectus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_prospectus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92922C6C2B6EB92C825D5BDC /* Pods-prospectus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prospectus.release.xcconfig"; path = "Pods/Target Support Files/Pods-prospectus/Pods-prospectus.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				0751044820FDD79800998B87 /* MainTabBarController.swift */,
 				0779682420FF9B0500AAB14E /* WelcomeViewController.swift */,
+				07FEDEA22100E139008F25A3 /* WelcomeDetailViewController.swift */,
 				0751044A20FDD7E700998B87 /* NewsTableViewController.swift */,
 				0751044C20FDD80200998B87 /* CoursesViewController.swift */,
 				0751044E20FDD80F00998B87 /* FavouritesViewController.swift */,
@@ -274,6 +277,7 @@
 				0751044D20FDD80200998B87 /* CoursesViewController.swift in Sources */,
 				0779682720FF9BBF00AAB14E /* Models.swift in Sources */,
 				0751044920FDD79800998B87 /* MainTabBarController.swift in Sources */,
+				07FEDEA32100E139008F25A3 /* WelcomeDetailViewController.swift in Sources */,
 				0779682D20FFB50E00AAB14E /* ArticleTableViewCell.swift in Sources */,
 				0779682520FF9B0500AAB14E /* WelcomeViewController.swift in Sources */,
 				0751044F20FDD80F00998B87 /* FavouritesViewController.swift in Sources */,

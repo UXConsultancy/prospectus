@@ -24,7 +24,7 @@ class WelcomeViewController: UITableViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.estimatedRowHeight = 312
-        tableView.rowHeight = 312 //UITableViewAutomaticDimension
+        tableView.rowHeight = 324 //UITableViewAutomaticDimension
         
         
         // get data fromFirebase?
@@ -58,14 +58,21 @@ class WelcomeViewController: UITableViewController {
             cell.articleTitle = t
             let i = article["image"] as! String
             cell.articleImage = UIImage(named: i)
-            
-
         }
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = WelcomeDetailViewController()
+        //getting the index path of selected row
+        let indexPath = tableView.indexPathForSelectedRow
+        //getting the current cell from the index path
+        if let text :QueryDocumentSnapshot = self.articles?[(indexPath?.row)!] {
+            let article = text.data()
+            vc.article = article
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
     }
 
