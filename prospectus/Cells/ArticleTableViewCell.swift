@@ -83,9 +83,9 @@ class ArticleTableViewCell: UITableViewCell {
         if let t = articleTitle {
             articleTitleView.text = t
         }
-//        if let d = articleDate {
-            articleDateView.text = "Testing"//d
-//        }
+        if let d = articleDate {
+            articleDateView.text = d
+        }
         
     }
     

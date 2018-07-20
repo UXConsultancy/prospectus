@@ -34,7 +34,6 @@ class FBHelper {
         } catch {
             print(error)
         }
-        
     }
     
     func read<T: Decodable>(from collectionReference: FBCollectionReference, returning objectType: T.Type, completion: @escaping ([T]) -> Void)  {
@@ -45,7 +44,12 @@ class FBHelper {
                 var objects = [T]()
                 for article in articles.documents {
                     let object = try article.decode(as: objectType.self)
-                        objects.append(object)
+//                        objects.append(object)
+                    var test = objects.count
+                    if objects.count < 0 {
+                        test = 1
+                    }
+                        objects.insert(object, at: test)
                 }
                 completion(objects)
             } catch {
@@ -87,7 +91,7 @@ extension DocumentSnapshot {
             documentJson!["id"] = documentID
         }
         
-        let documentData = try JSONSerialization.data(withJSONObject: documentJson ?? nil, options: [])
+        let documentData = try JSONSerialization.data(withJSONObject: documentJson, options: [])
         let decodedObject = try JSONDecoder().decode(objectType, from: documentData)
         
         return decodedObject
