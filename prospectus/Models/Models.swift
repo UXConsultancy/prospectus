@@ -8,14 +8,15 @@
 
 import Foundation
 
-class Article: NSObject {
+class Article: NSObject ,Codable {
     
-    var id: String?
+    var id: String? = nil
     var date: String?
     var image: String?
     var featured: Bool?
     var title: String?
     var text: String?
+    
     
 }
 

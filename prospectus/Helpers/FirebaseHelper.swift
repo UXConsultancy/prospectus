@@ -9,26 +9,87 @@
 import Foundation
 import Firebase
 
-var articleCollection: [Article] = []
+enum MyError: Error {
+    case encodingError
+}
 
-func getDataFromFirebaseCollection(collection: String) -> [Article] {
-
-    let db = Firestore.firestore()
-    let collectionReference = db.collection("introduction");
-    collectionReference.getDocuments(source: .cache) { (collection, error) in
-        guard let test = collection else {return}
-        let articles = test.documents
-        for article in articles {
-            let a = article.data()
+class FBHelper {
+    
+    private init() {}
+    
+    static let shared = FBHelper()
+    
+    func configure() {
+        FirebaseApp.configure()
+    }
+    
+    private func reference(to collectionReference: FBCollectionReference) -> CollectionReference {
+        return Firestore.firestore().collection(collectionReference.rawValue)
+    }
+    
+    func create<T: Encodable>(for encodeableObject: T, in collectionReference: FBCollectionReference){
+        do {
+            let json = try encodeableObject.toJson(excluding: ["id"])
+            reference(to: .introduction).addDocument(data: json)
+        } catch {
+            print(error)
+        }
+        
+    }
+    
+    func read<T: Decodable>(from collectionReference: FBCollectionReference, returning objectType: T.Type, completion: @escaping ([T]) -> Void)  {
+        reference(to: .introduction).addSnapshotListener { (snapshot, error) in
             
-            let article = Article()
-            article.title = a["title"] as? String
-            article.date = a["date"] as? String
-            article.featured = a["featured"] as? Bool
-            article.image = a["image"] as? String
-            article.text = a["text"] as? String
-            articleCollection.append(article)
+            guard let articles = snapshot else { return }
+            do {
+                var objects = [T]()
+                for article in articles.documents {
+                    let object = try article.decode(as: objectType.self)
+                        objects.append(object)
+                }
+                completion(objects)
+            } catch {
+                print(error)
+            }
         }
     }
-    return articleCollection
+    
+    func update() {
+        
+    }
+    
+    func delete() {
+        
+    }
+    
+}
+
+extension Encodable {
+    
+    func toJson(excluding keys: [String] = [String]()) throws -> [String: Any] {
+        
+        let objectData = try JSONEncoder().encode(self)
+        // jsonObject comes back as any, make this more robust!
+        let jsonObject = try JSONSerialization.jsonObject(with: objectData, options: [])
+        guard var json = jsonObject as? [String: Any] else { throw MyError.encodingError}
+        
+        for key in keys {
+            json[key] = nil
+        }
+        return json
+    }
+}
+
+extension DocumentSnapshot {
+    func decode<T: Decodable>(as objectType: T.Type, includingId: Bool = true) throws -> T {
+        var documentJson = data()
+        if includingId {
+            documentJson!["id"] = documentID
+        }
+        
+        let documentData = try JSONSerialization.data(withJSONObject: documentJson ?? nil, options: [])
+        let decodedObject = try JSONDecoder().decode(objectType, from: documentData)
+        
+        return decodedObject
+    }
 }

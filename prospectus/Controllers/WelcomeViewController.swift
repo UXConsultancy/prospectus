@@ -27,26 +27,9 @@ class WelcomeViewController: UITableViewController {
         
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "welcome")
         
-        // get data fromFirebase?
-        let db = Firestore.firestore()
-        let collectionReference = db.collection("introduction");
-        collectionReference.getDocuments(source: .cache) { (collection, error) in
-            guard let test = collection else {return}
-            let articles = test.documents
-            for article in articles {
-                let a = article.data()
-                
-                let article = Article()
-                article.title = a["title"] as? String
-                article.date = a["date"] as? String
-                article.featured = a["featured"] as? Bool
-                article.image = a["image"] as? String
-                article.text = a["text"] as? String
-                self.articles.append(article)
-            }
-            DispatchQueue.main.sync {
-                self.tableView.reloadData()
-            }
+        FBHelper.shared.read(from: .introduction, returning: Article.self) { (articles) in
+            self.articles = articles
+            self.tableView.reloadData()
         }
     }
     

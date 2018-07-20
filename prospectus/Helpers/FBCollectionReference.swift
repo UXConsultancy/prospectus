@@ -1,0 +1,16 @@
+//
+//  FBCollectionReference.swift
+//  prospectus
+//
+//  Created by Craig Chambers on 20/07/2018.
+//  Copyright © 2018 Craig Chambers. All rights reserved.
+//
+
+import Foundation
+
+enum FBCollectionReference: String {
+    case introduction
+    case news
+    case courses
+    case favourites
+}
