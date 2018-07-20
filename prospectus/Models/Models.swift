@@ -11,7 +11,7 @@ import Foundation
 class Article: NSObject {
     
     var id: String?
-    var date: Date?
+    var date: String?
     var image: String?
     var featured: Bool?
     var title: String?

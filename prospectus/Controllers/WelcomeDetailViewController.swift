@@ -11,7 +11,7 @@ import UIKit
 
 class WelcomeDetailViewController: UIViewController {
     
-    var article: [String : Any]?
+    var article: Article!
 
     var scrollView: UIScrollView = {
         var sv = UIScrollView()
@@ -63,7 +63,7 @@ class WelcomeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = article!["title"] as? String
+        self.title = article.title
         self.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.view.contentMode = .scaleToFill
@@ -72,8 +72,8 @@ class WelcomeDetailViewController: UIViewController {
         scrollView.addSubview(articleImageView)
         scrollView.addSubview(articleTextView)
         
-        self.articleImageView.image = UIImage(named: article!["image"] as! String)
-        self.articleTextView.text = article!["text"] as! String
+        self.articleImageView.image = UIImage(named: article.image!)
+        self.articleTextView.text = article.text
         
         setupViewContraints()
     }

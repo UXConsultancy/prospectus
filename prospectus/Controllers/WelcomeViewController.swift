@@ -10,9 +10,8 @@ import UIKit
 import Firebase
 
 class WelcomeViewController: UITableViewController {
-    
-    var docRef: CollectionReference!
-    var articles: [QueryDocumentSnapshot]?
+
+    var articles: [Article]! = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +25,26 @@ class WelcomeViewController: UITableViewController {
         tableView.estimatedRowHeight = 312
         tableView.rowHeight = 324 //UITableViewAutomaticDimension
         
+        tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "welcome")
         
         // get data fromFirebase?
-        docRef = Firestore.firestore().collection("introduction")
-        getDataForIntroduction(from: docRef)
-        
-        tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "welcome")
-    }
-    
-    func getDataForIntroduction(from: CollectionReference) {
-        from.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                self.articles = querySnapshot!.documents
+        let db = Firestore.firestore()
+        let collectionReference = db.collection("introduction");
+        collectionReference.getDocuments(source: .cache) { (collection, error) in
+            guard let test = collection else {return}
+            let articles = test.documents
+            for article in articles {
+                let a = article.data()
+                
+                let article = Article()
+                article.title = a["title"] as? String
+                article.date = a["date"] as? String
+                article.featured = a["featured"] as? Bool
+                article.image = a["image"] as? String
+                article.text = a["text"] as? String
+                self.articles.append(article)
+            }
+            DispatchQueue.main.sync {
                 self.tableView.reloadData()
             }
         }
@@ -52,27 +57,16 @@ class WelcomeViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "welcome", for: indexPath) as! ArticleTableViewCell
-        if let text :QueryDocumentSnapshot = self.articles?[indexPath.row] {
-            let article = text.data()
-            let t = article["title"] as! String
-            cell.articleTitle = t
-            let i = article["image"] as! String
-            cell.articleImage = UIImage(named: i)
-        }
-        
+        cell.articleTitle = articles[indexPath.row].title
+        cell.articleDate = articles[indexPath.row].date
+        cell.articleImage = UIImage(named: articles[indexPath.row].image!)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = WelcomeDetailViewController()
-        //getting the index path of selected row
-        let indexPath = tableView.indexPathForSelectedRow
-        //getting the current cell from the index path
-        if let text :QueryDocumentSnapshot = self.articles?[(indexPath?.row)!] {
-            let article = text.data()
-            vc.article = article
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        vc.article = articles[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
 
