@@ -27,14 +27,6 @@ class WelcomeViewController: UITableViewController {
         
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "welcome")
         
-        let test = Article()
-        test.title = "Testing Database Add"
-        test.image = "cs"
-        test.text = "Lots of text will be here!"
-        test.featured = false
-        test.date = "21/01/1968 00:00"
-        FBHelper.shared.create(for: test, in: .introduction)
-        
         FBHelper.shared.read(from: .introduction, returning: Article.self) { (articles) in
             self.articles = articles
             self.tableView.reloadData()

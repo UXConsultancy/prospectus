@@ -30,14 +30,14 @@ class FBHelper {
     func create<T: Encodable>(for encodeableObject: T, in collectionReference: FBCollectionReference){
         do {
             let json = try encodeableObject.toJson(excluding: ["id"])
-            reference(to: .introduction).addDocument(data: json)
+            reference(to: collectionReference).addDocument(data: json)
         } catch {
             print(error)
         }
     }
     
     func read<T: Decodable>(from collectionReference: FBCollectionReference, returning objectType: T.Type, completion: @escaping ([T]) -> Void)  {
-        reference(to: .introduction).addSnapshotListener { (snapshot, error) in
+        reference(to: collectionReference).addSnapshotListener { (snapshot, error) in
             
             guard let articles = snapshot else { return }
             do {
@@ -91,7 +91,7 @@ extension DocumentSnapshot {
             documentJson!["id"] = documentID
         }
         
-        let documentData = try JSONSerialization.data(withJSONObject: documentJson, options: [])
+        let documentData = try JSONSerialization.data(withJSONObject: documentJson!, options: [])
         let decodedObject = try JSONDecoder().decode(objectType, from: documentData)
         
         return decodedObject
