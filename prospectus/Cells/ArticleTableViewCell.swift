@@ -34,7 +34,7 @@ class ArticleTableViewCell: UITableViewCell {
     var articleDateView: UITextView = {
         var text = UITextView()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.font = UIFont.preferredFont(forTextStyle: .caption2)
+        text.font = UIFont.preferredFont(forTextStyle: .body)
         text.textAlignment = .right
         text.isEditable = false
         text.isScrollEnabled = false
