@@ -104,13 +104,13 @@
 		0751044420FDD08400998B87 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				07F0A0D22107138900EA2BD9 /* ModelController.swift */,
 				0751044820FDD79800998B87 /* MainTabBarController.swift */,
 				0779682420FF9B0500AAB14E /* WelcomeViewController.swift */,
 				07FEDEA22100E139008F25A3 /* WelcomeDetailViewController.swift */,
 				0751044A20FDD7E700998B87 /* NewsTableViewController.swift */,
 				0751044C20FDD80200998B87 /* CoursesViewController.swift */,
 				0751044E20FDD80F00998B87 /* FavouritesViewController.swift */,
-				07F0A0D22107138900EA2BD9 /* ModelController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

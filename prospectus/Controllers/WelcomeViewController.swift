@@ -11,11 +11,13 @@ import Firebase
 
 class WelcomeViewController: UITableViewController {
 
+    var modelController: ModelController!
     var articles: [Article]! = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        modelController = ModelController()
+        
         // Set visuals for ViewController
         self.title = "Welcome"
         self.view.backgroundColor = UIColor.white
@@ -27,10 +29,13 @@ class WelcomeViewController: UITableViewController {
         
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "welcome")
         
-        FBHelper.shared.read(from: .introduction, returning: Article.self) { (articles) in
-            self.articles = articles
-            self.tableView.reloadData()
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTable), name: NSNotification.Name("gotWelcome"), object: nil)
+
+    }
+    
+    @objc func reloadTable() {
+        self.articles = modelController.welcome
+        self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -27,7 +27,7 @@ class ModelController {
         // get introduction (welcome) articles
         FBHelper.shared.read(from: .introduction, returning: Article.self) { (articles) in
             self.welcome = articles
-            NotificationCenter.default.post(name: NSNotification.Name("gotIntroduction"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name("gotWelcome"), object: nil)
         }
     }
 }
