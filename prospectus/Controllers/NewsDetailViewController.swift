@@ -1,15 +1,14 @@
 //
-//  WelcomeDetailViewController.swift
+//  NewsDetailViewController.swift
 //  prospectus
 //
-//  Created by Craig Chambers on 19/07/2018.
+//  Created by Craig Chambers on 26/07/2018.
 //  Copyright © 2018 Craig Chambers. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class WelcomeDetailViewController: UIViewController {
+class NewsDetailViewController: UIViewController {
     
     var article: Article!
     
@@ -32,7 +31,7 @@ class WelcomeDetailViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         downloadImageFromUrl(url: NSURL(string: (article?.image)!)! as URL)
-        
+
         detailView.imageView.image = UIImage()
         detailView.dateView.text = article?.date
         detailView.textView.text = article?.text
@@ -49,7 +48,7 @@ class WelcomeDetailViewController: UIViewController {
         self.detailView.imageView.setNeedsLayout()
         self.detailView.imageView.layoutIfNeeded()
     }
-    
+
     fileprivate func setupViews() {
         
         scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
@@ -59,7 +58,7 @@ class WelcomeDetailViewController: UIViewController {
         
         detailView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0).isActive = true
         detailView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0).isActive = true
-        
+
         detailView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         detailView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
     }
@@ -98,4 +97,5 @@ class WelcomeDetailViewController: UIViewController {
         
         downloadPicTask.resume()
     }
+    
 }

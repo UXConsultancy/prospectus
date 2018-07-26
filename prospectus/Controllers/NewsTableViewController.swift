@@ -42,5 +42,12 @@ class NewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return news.count
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = NewsDetailViewController()
+        vc.article = news[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
 
 }
