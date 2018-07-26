@@ -23,7 +23,7 @@ class NewsTableViewController: UITableViewController {
         self.tableView.rowHeight = 40
         modelController = ModelController()
         
-        tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "news")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "news")
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name("gotNews"), object: nil)
     }
