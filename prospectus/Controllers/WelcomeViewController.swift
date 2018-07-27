@@ -47,7 +47,7 @@ class WelcomeViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "welcome", for: indexPath) as! ArticleTableViewCell
         cell.articleTitle = articles[indexPath.row].title
         cell.articleDate = articles[indexPath.row].date
-        cell.articleImage = UIImage(named: articles[indexPath.row].image!)
+        cell.articleImage = articles[indexPath.row].image
         return cell
     }
     
