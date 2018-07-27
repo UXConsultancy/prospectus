@@ -54,7 +54,7 @@ class ArticleTableViewCell: UITableViewCell {
         self.articleView.layer.cornerRadius = 10
         self.articleView.layer.masksToBounds = true
         
-        self.articleView.layer.borderWidth = 1.0
+        self.articleView.layer.borderWidth = 1.5
         let opacity: CGFloat = 0.6
         let borderColor = UIColor.darkGray
         self.articleView.layer.borderColor = borderColor.withAlphaComponent(opacity).cgColor
