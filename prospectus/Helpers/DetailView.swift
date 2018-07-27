@@ -13,6 +13,8 @@ class DetailView: UIView {
     // instantiate views
     let imageView: UIImageView = {
         var iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()

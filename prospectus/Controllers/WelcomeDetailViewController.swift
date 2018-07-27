@@ -13,8 +13,6 @@ class WelcomeDetailViewController: UIViewController {
     
     var article: Article!
     
-    let defaultImage = UIImage(named: "s6c")
-    
     var detailView: DetailView! = {
         var dv = DetailView()
         dv.translatesAutoresizingMaskIntoConstraints = false
@@ -32,9 +30,8 @@ class WelcomeDetailViewController: UIViewController {
         
 //        self.title = article?.title
         self.view.backgroundColor = UIColor.white
-        detailView.imageView.image = defaultImage
         
-        detailView.imageView.downloadedFrom(link: article.image!)
+        detailView.imageView.sd_setImage(with: URL(string: article.image!), placeholderImage: UIImage(named: "s6c"))
         detailView.titleView.text = article.title
         detailView.dateView.text = article?.date
         detailView.textView.text = article?.text

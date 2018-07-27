@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ArticleTableViewCell: UITableViewCell {
     
@@ -16,7 +17,6 @@ class ArticleTableViewCell: UITableViewCell {
     
     var articleImageView: UIImageView = {
         var image = UIImageView()
-        image.image = UIImage(named: "s6c")
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
@@ -45,8 +45,6 @@ class ArticleTableViewCell: UITableViewCell {
     var articleView: UIView = {
         var view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.layer.borderWidth = 1.0
-//        view.layer.borderColor = UIColor.darkGray.cgColor
         return view
     }()
     
@@ -79,8 +77,7 @@ class ArticleTableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         if let i = articleImage {
-//            articleImageView.image = i
-            articleImageView.downloadedFrom(link: i)
+            articleImageView.sd_setImage(with: URL(string: i), placeholderImage: UIImage(named: "s6c"))
         }
         if let t = articleTitle {
             articleTitleView.text = t

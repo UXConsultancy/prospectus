@@ -12,8 +12,6 @@ class NewsDetailViewController: UIViewController {
     
     var article: Article!
     
-     let defaultImage = UIImage(named: "s6c")
-    
     var detailView: DetailView! = {
         var dv = DetailView()
         dv.translatesAutoresizingMaskIntoConstraints = false
@@ -33,9 +31,8 @@ class NewsDetailViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
-        detailView.imageView.image = defaultImage
 
-        detailView.imageView.downloadedFrom(url: URL(string: article.image!)!)
+        detailView.imageView.sd_setImage(with: URL(string: article.image!), placeholderImage: UIImage(named: "s6c"))
         detailView.titleView.text = article.title
         detailView.dateView.text = article?.date
         detailView.textView.text = article?.text
