@@ -19,7 +19,7 @@ class NewsTableViewController: UITableViewController {
         // Set visuals for ViewController
         self.title = "News"
         self.view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+//        self.navigationController?.navigationBar.prefersLargeTitles = true
         tableView.estimatedRowHeight = 324
         tableView.rowHeight = 324 // UITableViewAutomaticDimension
         modelController = ModelController()

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Helpers/FirebaseHelper.swift"
-            timestampString = "554130978.369229"
+            timestampString = "554405301.082399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Controllers/NewsTableViewController.swift"
-            timestampString = "554399000.8900909"
+            timestampString = "554406930.352203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -56,7 +56,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Controllers/NewsTableViewController.swift"
-            timestampString = "554399000.890422"
+            timestampString = "554406930.352264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Cells/ArticleTableViewCell.swift"
-            timestampString = "554399360.712263"
+            timestampString = "554406930.352388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "layoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Cells/ArticleTableViewCell.swift"
-            timestampString = "554399360.712612"
+            timestampString = "554406930.3524359"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "layoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -180,7 +180,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Controllers/WelcomeViewController.swift"
-            timestampString = "554399000.890905"
+            timestampString = "554406930.352479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Controllers/ModelController.swift"
-            timestampString = "554397960.960068"
+            timestampString = "554406930.3525209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34">
+            startingLineNumber = "37"
+            endingLineNumber = "37">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

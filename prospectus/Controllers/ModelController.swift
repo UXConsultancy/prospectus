@@ -15,6 +15,8 @@ class ModelController {
     var welcome: [Article] = []
     
     init() {
+        // Uncomment if you want to add data to the database
+//        doIt(table: .introduction)
         getArticles()
     }
     

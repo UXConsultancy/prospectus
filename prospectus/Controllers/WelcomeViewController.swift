@@ -23,7 +23,8 @@ class WelcomeViewController: UITableViewController {
         self.title = "Welcome"
         self.tableView.separatorStyle = .none
         self.view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+//        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.estimatedRowHeight = 324

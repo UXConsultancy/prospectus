@@ -18,6 +18,7 @@ class ArticleTableViewCell: UITableViewCell {
     var articleImageView: UIImageView = {
         var image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.backgroundColor = UIColor.clear
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         return image
@@ -27,6 +28,8 @@ class ArticleTableViewCell: UITableViewCell {
         var text = UITextView()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.font = UIFont.preferredFont(forTextStyle: .headline)
+        text.backgroundColor = UIColor.clear
+        text.textColor = UIColor.white
         text.isEditable = false
         text.isScrollEnabled = false
         return text
@@ -36,6 +39,8 @@ class ArticleTableViewCell: UITableViewCell {
         var text = UITextView()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.font = UIFont.preferredFont(forTextStyle: .caption2)
+        text.backgroundColor = UIColor.clear
+        text.textColor = UIColor.lightGray
         text.textAlignment = .right
         text.isEditable = false
         text.isScrollEnabled = false
@@ -53,6 +58,7 @@ class ArticleTableViewCell: UITableViewCell {
         
         self.articleView.layer.cornerRadius = 10
         self.articleView.layer.masksToBounds = true
+        self.articleView.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
         
         self.articleView.layer.borderWidth = 1.5
         let opacity: CGFloat = 0.6

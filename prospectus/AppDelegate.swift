@@ -20,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        FirebaseApp.configure()
         FBHelper.shared.configure()
+        
+        
+        // set light statusbar
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         
         // Create ViewControllers
@@ -28,7 +34,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Load main window
         window!.rootViewController = mainTabBarController
         window!.makeKeyAndVisible()
+        
+        //change titlebar colours
+        UINavigationBar.appearance().barTintColor = UIColor(red: 102.0/255.0, green: 44.0/255.0, blue: 144.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        
+        let color = UIColor.white
+        let attributes: [NSAttributedStringKey: AnyObject] = [
+            NSAttributedStringKey.foregroundColor: color
+        ]
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = attributes
 
+        
+        
         return true
     }
 
