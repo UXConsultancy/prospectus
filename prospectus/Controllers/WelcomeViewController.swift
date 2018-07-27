@@ -26,7 +26,7 @@ class WelcomeViewController: UITableViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        tableView.estimatedRowHeight = 312
+        tableView.estimatedRowHeight = 324
         tableView.rowHeight = 324 //UITableViewAutomaticDimension
         
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "welcome")

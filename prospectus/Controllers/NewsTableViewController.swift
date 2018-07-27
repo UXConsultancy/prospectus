@@ -20,10 +20,11 @@ class NewsTableViewController: UITableViewController {
         self.title = "News"
         self.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.tableView.rowHeight = 40
+        tableView.estimatedRowHeight = 324
+        tableView.rowHeight = 324 // UITableViewAutomaticDimension
         modelController = ModelController()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "news")
+        tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "news")
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name("gotNews"), object: nil)
     }
@@ -34,8 +35,11 @@ class NewsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "news", for: indexPath)
-        cell.textLabel?.text = news[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "news", for: indexPath) as! ArticleTableViewCell
+        cell.articleTitle = news[indexPath.row].title
+        cell.articleDate = news[indexPath.row].date
+        cell.articleImage = news[indexPath.row].image
+//        cell.textLabel?.text = news[indexPath.row].title
         return cell
     }
     
