@@ -51,6 +51,9 @@ class ArticleTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.articleView.layer.cornerRadius = 10
+        self.articleView.layer.masksToBounds = true
+        
         self.articleView.layer.borderWidth = 1.0
         let opacity: CGFloat = 0.6
         let borderColor = UIColor.darkGray
@@ -94,7 +97,7 @@ class ArticleTableViewCell: UITableViewCell {
         articleView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8).isActive = true
         articleView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 8).isActive = true
         articleView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -8).isActive = true
-        articleView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0).isActive = true
+        articleView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8).isActive = true
         
         // articleImageView
         articleImageView.topAnchor.constraint(equalTo: articleView.topAnchor, constant: 0).isActive = true
