@@ -16,6 +16,7 @@ class ArticleTableViewCell: UITableViewCell {
     
     var articleImageView: UIImageView = {
         var image = UIImageView()
+        image.image = UIImage(named: "s6c")
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
@@ -34,7 +35,7 @@ class ArticleTableViewCell: UITableViewCell {
     var articleDateView: UITextView = {
         var text = UITextView()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.font = UIFont.preferredFont(forTextStyle: .body)
+        text.font = UIFont.preferredFont(forTextStyle: .caption2)
         text.textAlignment = .right
         text.isEditable = false
         text.isScrollEnabled = false

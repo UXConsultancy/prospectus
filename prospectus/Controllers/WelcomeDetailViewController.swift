@@ -13,6 +13,8 @@ class WelcomeDetailViewController: UIViewController {
     
     var article: Article!
     
+    let defaultImage = UIImage(named: "s6c")
+    
     var detailView: DetailView! = {
         var dv = DetailView()
         dv.translatesAutoresizingMaskIntoConstraints = false
@@ -28,10 +30,12 @@ class WelcomeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = article?.title
+//        self.title = article?.title
         self.view.backgroundColor = UIColor.white
+        detailView.imageView.image = defaultImage
         
         detailView.imageView.downloadedFrom(link: article.image!)
+        detailView.titleView.text = article.title
         detailView.dateView.text = article?.date
         detailView.textView.text = article?.text
         
