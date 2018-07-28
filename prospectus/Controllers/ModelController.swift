@@ -13,10 +13,11 @@ class ModelController {
     
     var news: [Article] = []
     var welcome: [Article] = []
+    var courses: [Course] = []
     
     init() {
         // Uncomment if you want to add data to the database
-//        doIt(table: .introduction)
+//        addCourse(table: .courses)
         getArticles()
     }
     
@@ -31,5 +32,11 @@ class ModelController {
             self.welcome = articles
             NotificationCenter.default.post(name: NSNotification.Name("gotWelcome"), object: nil)
         }
+        // get courses
+        FBHelper.shared.read(from: .courses, returning: Course.self) { (courses) in
+            self.courses = courses
+            NotificationCenter.default.post(name: NSNotification.Name("gotCourses"), object: nil)
+        }
     }
+    
 }

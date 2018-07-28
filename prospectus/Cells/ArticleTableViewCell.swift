@@ -72,9 +72,6 @@ class ArticleTableViewCell: UITableViewCell {
         articleView.addSubview(articleDateView)
         
         setupViewContraints()
-        let w = self.contentView.bounds.width
-        let h = self.contentView.bounds.height
-        print("width = \(w), height = \(h)")
         layoutSubviews()
     }
     

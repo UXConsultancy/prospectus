@@ -9,11 +9,17 @@
 import Foundation
 import UIKit
 
-var title = "Welcome to S6C"
-var date = "27/08/18 18:39"
+var title = "Art and Design: Fine Art"
+var date = "28/08/18 10:32"
 var featured = false
-var image = "https://firebasestorage.googleapis.com/v0/b/prospectus-f2184.appspot.com/o/gemma.jpg?alt=media&token=2e5f3111-ade8-4b28-ac14-902932648586"
-var text = "Since Salisbury 6th Form College opened in 2104, it has consistently delivered successful results both in A level subjects and vocational qualifications. This is a true reflection of the hard-working members of staff we are lucky to have in the college community who are all incredibly passionate about the subjects they teach. They strive to support you and push you to your full potential. However, it's not merely the results obtained at the end of Year 13 by the students that makes a college great.\\n\\nI chose to study at S6C because of the college's friendly atmosphere and strong working environment. The Induction Day was the first time I visited S6C and the moment I stepped inside the doors I knew that this was the place I wanted to be. As the day continued this feeling was only reaffirmed and I decided I was going to throw myself in at the deep end and get actively involved in the College as much as I possibly could.\n\nThat is exactly what I've done this past year and it has been incredible! Getting involved in the college community and seizing the opportunities on offer reaps its own benefits. There are many opportunities to contribute to the positive ethos of the college; over the past year I have been involved in particularly with Student Voice which enables the students to have a say on how the College is run. This ensures that the college environment is tailored to the needs of all the students which maximises our ability to thrive and flourish during the crucial stage of our education. It's also incredibly rewarding to see your ideas being taken on board and put into action. This really demonstrates how, at S6C, you are truly valued as an individual and recognised as someone with a future and your own personal goals which the staff are all eager to help you pursue.\n\nGemma Hayden\nStudent President, 2018-19"
+var image = "https://firebasestorage.googleapis.com/v0/b/prospectus-f2184.appspot.com/o/art.jpg?alt=media&token=decc17fe-e446-4719-8f59-80e64e4c87f3"
+var text = "The Art & Design course in Fine Art is designed to strengthen and build on the skills, techniques and processes acquired at CGSE Art & Design such as: recording ideas and observations, developing work informed by artists, designers and craftspeople, experimenting with media and materials and reviewing and refining work\n\nThrough taught lessons, workshops and independant study, you will be introduced to a variety of experiences exploring a range of art media, techniques and processes and be made aware of traditional and new technologies. These will include painting and drawing, mixed media, sculpture, printmaking, animation, video and photography.\n\nYou should be aware of the importance of research and you will are encouraged to explore methods for developing themes and ideas.\n\n\tYou will be able to demonstrate knowledge and understanding in the appreciation of different approaches to recording images, such as observation, analysis and expression\n\n\tYou will be able to recognise different ways of working, such as using underpainting, glazing, wash and impasto, modelling, assembling, mono printing, lino printing and screen printing\n\n\tYou will develop an understanding of space, composition, rhythm, scale and structure.\n\n\tYou will be able to recognise and critically analyse and interpret the visual elements\n\n"
+
+var entryRequirements = "To study this course you will need to meet the overall entry requirements for Pathway 1 or 2 including a grade 6 or above in CGSE Art & Design or an equivalent qualification, or a technology subject such as Graphic Products or Textiles.\n\nWe will ask you to bring a portfolio of your work to your interview. Consideration will be given to those who have not studied an Art or Design course at school or who have achieved a grade 5, in this case a portfolio of work must be provided at your interview.\n\nsalisbury6c.ac.uk/courses/art-and-design-fine-art/\n\n"
+var examBoard = "AQA"
+var fact = "You will be offered a range of opportunities in Fine Art such as:\n\tWorking to live briefs - last year students designed and made the backdrop to a 60's inspired music event\n\tTaking part in local competitions\n\tMini masterclasses\n\tGuest speakers from the creative industry.\n\n"
+var type = "A Level"
+
 
 func setupArticle() -> Article {
     let article = Article()
@@ -26,12 +32,35 @@ func setupArticle() -> Article {
     return article
 }
 
-func uploadData(article: Article, collection: FBCollectionReference) {
+func setupCourse() -> Course {
+    let course = Course()
+    course.title = title
+    course.entryRequirements = entryRequirements
+    course.examBoard = examBoard
+    course.fact = fact
+    course.type = type
+    course.date = date
+    course.featured = featured
+    course.image = image
+    course.text = text
+    return course
+}
+
+func uploadArticle(article: Article, collection: FBCollectionReference) {
     FBHelper.shared.create(for: article, in: collection)
 }
 
-func doIt(table: FBCollectionReference) {
+func uploadCourse(course: Course, collection: FBCollectionReference) {
+    FBHelper.shared.create(for: course, in: collection)
+}
+
+func addArticle(table: FBCollectionReference) {
     let story = setupArticle()
-    uploadData(article: story, collection: table)
+    uploadArticle(article: story, collection: table)
+}
+
+func addCourse(table: FBCollectionReference) {
+    let story = setupCourse()
+    uploadCourse(course: story, collection: table)
 }
 

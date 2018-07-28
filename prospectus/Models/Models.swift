@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Article: NSObject ,Codable {
+class Article: NSObject, Codable {
     
     var id: String? = nil
     var date: String?
@@ -20,8 +20,14 @@ class Article: NSObject ,Codable {
     
 }
 
-class Course: Article {
+class Course: NSObject, Codable{
     
+    var id: String? = nil
+    var date: String?
+    var image: String?
+    var featured: Bool?
+    var title: String?
+    var text: String?
     var examBoard: String?
     var entryRequirements: String?
     var fact: String?

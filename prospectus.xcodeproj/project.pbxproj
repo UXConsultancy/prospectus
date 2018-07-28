@@ -14,6 +14,7 @@
 		0751044D20FDD80200998B87 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751044C20FDD80200998B87 /* CoursesViewController.swift */; };
 		0751044F20FDD80F00998B87 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751044E20FDD80F00998B87 /* FavouritesViewController.swift */; };
 		0769FF71210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF70210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift */; };
+		0769FF73210CA96300A7B83F /* CourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF72210CA96300A7B83F /* CourseCollectionViewCell.swift */; };
 		0779682520FF9B0500AAB14E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779682420FF9B0500AAB14E /* WelcomeViewController.swift */; };
 		0779682720FF9BBF00AAB14E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779682620FF9BBF00AAB14E /* Models.swift */; };
 		0779682D20FFB50E00AAB14E /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779682C20FFB50E00AAB14E /* ArticleTableViewCell.swift */; };
@@ -39,6 +40,7 @@
 		0751044C20FDD80200998B87 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		0751044E20FDD80F00998B87 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		0769FF70210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDataToDataBaseForTesting.swift; sourceTree = "<group>"; };
+		0769FF72210CA96300A7B83F /* CourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCollectionViewCell.swift; sourceTree = "<group>"; };
 		0779682420FF9B0500AAB14E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0779682620FF9BBF00AAB14E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0779682C20FFB50E00AAB14E /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				0779682C20FFB50E00AAB14E /* ArticleTableViewCell.swift */,
+				0769FF72210CA96300A7B83F /* CourseCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				07F0A0DD210B33E300EA2BD9 /* Extensions.swift in Sources */,
 				0751044F20FDD80F00998B87 /* FavouritesViewController.swift in Sources */,
 				07FEDEC021023831008F25A3 /* FBCollectionReference.swift in Sources */,
+				0769FF73210CA96300A7B83F /* CourseCollectionViewCell.swift in Sources */,
 				07FEDEBC210200A3008F25A3 /* FirebaseHelper.swift in Sources */,
 				0751044B20FDD7E700998B87 /* NewsTableViewController.swift in Sources */,
 			);

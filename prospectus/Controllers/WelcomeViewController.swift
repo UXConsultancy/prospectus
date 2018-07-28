@@ -20,7 +20,7 @@ class WelcomeViewController: UITableViewController {
         modelController = ModelController()
         
         // Set visuals for ViewController
-        self.title = "Welcome"
+        self.title = "welcome"
         self.tableView.separatorStyle = .none
         self.view.backgroundColor = UIColor.white
 //        self.navigationController?.navigationBar.prefersLargeTitles = true
