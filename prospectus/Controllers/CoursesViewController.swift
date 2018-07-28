@@ -83,6 +83,11 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = CourseDetailViewController()
+        vc.course = courses[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     func setupViews() {
         

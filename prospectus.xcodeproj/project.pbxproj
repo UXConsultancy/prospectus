@@ -15,6 +15,8 @@
 		0751044F20FDD80F00998B87 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751044E20FDD80F00998B87 /* FavouritesViewController.swift */; };
 		0769FF71210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF70210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift */; };
 		0769FF73210CA96300A7B83F /* CourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF72210CA96300A7B83F /* CourseCollectionViewCell.swift */; };
+		0769FF75210CC45200A7B83F /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF74210CC45200A7B83F /* CourseDetailViewController.swift */; };
+		0769FF77210CC47500A7B83F /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF76210CC47500A7B83F /* CourseDetailView.swift */; };
 		0779682520FF9B0500AAB14E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779682420FF9B0500AAB14E /* WelcomeViewController.swift */; };
 		0779682720FF9BBF00AAB14E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779682620FF9BBF00AAB14E /* Models.swift */; };
 		0779682D20FFB50E00AAB14E /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779682C20FFB50E00AAB14E /* ArticleTableViewCell.swift */; };
@@ -41,6 +43,8 @@
 		0751044E20FDD80F00998B87 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		0769FF70210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDataToDataBaseForTesting.swift; sourceTree = "<group>"; };
 		0769FF72210CA96300A7B83F /* CourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCollectionViewCell.swift; sourceTree = "<group>"; };
+		0769FF74210CC45200A7B83F /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
+		0769FF76210CC47500A7B83F /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseDetailView.swift; path = prospectus/Controllers/CourseDetailView.swift; sourceTree = SOURCE_ROOT; };
 		0779682420FF9B0500AAB14E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0779682620FF9BBF00AAB14E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0779682C20FFB50E00AAB14E /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				07F0A0D8210A09A300EA2BD9 /* DetailView.swift */,
+				0769FF76210CC47500A7B83F /* CourseDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 				0751044A20FDD7E700998B87 /* NewsTableViewController.swift */,
 				07F0A0DA210A0D7000EA2BD9 /* NewsDetailViewController.swift */,
 				0751044C20FDD80200998B87 /* CoursesViewController.swift */,
+				0769FF74210CC45200A7B83F /* CourseDetailViewController.swift */,
 				0751044E20FDD80F00998B87 /* FavouritesViewController.swift */,
 			);
 			path = Controllers;
@@ -302,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0769FF77210CC47500A7B83F /* CourseDetailView.swift in Sources */,
 				0751043220FD2F4600998B87 /* AppDelegate.swift in Sources */,
 				0751044D20FDD80200998B87 /* CoursesViewController.swift in Sources */,
 				0779682720FF9BBF00AAB14E /* Models.swift in Sources */,
@@ -318,6 +325,7 @@
 				0751044F20FDD80F00998B87 /* FavouritesViewController.swift in Sources */,
 				07FEDEC021023831008F25A3 /* FBCollectionReference.swift in Sources */,
 				0769FF73210CA96300A7B83F /* CourseCollectionViewCell.swift in Sources */,
+				0769FF75210CC45200A7B83F /* CourseDetailViewController.swift in Sources */,
 				07FEDEBC210200A3008F25A3 /* FirebaseHelper.swift in Sources */,
 				0751044B20FDD7E700998B87 /* NewsTableViewController.swift in Sources */,
 			);

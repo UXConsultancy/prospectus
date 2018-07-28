@@ -95,8 +95,7 @@ class CourseCollectionViewCell: UICollectionViewCell {
         // add subviews to cell
         self.contentView.addSubview(courseView)
         courseView.addSubview(courseImageView)
-        courseView.addSubview(backgroundImageView)
-//        courseView.addSubview(blurEffect)
+//        courseView.addSubview(backgroundImageView)
         courseView.addSubview(courseTitleView)
         courseView.addSubview(courseTypeView)
         courseView.addSubview(courseBoardView)
