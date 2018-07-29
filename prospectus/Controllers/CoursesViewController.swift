@@ -24,12 +24,12 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cv
     }()
     
-    let searchBar: UISearchBar = {
-        var sb = UISearchBar()
-        sb.translatesAutoresizingMaskIntoConstraints = false
-        sb.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
-        return sb
-    }()
+//    let searchBar: UISearchBar = {
+//        var sb = UISearchBar()
+//        sb.translatesAutoresizingMaskIntoConstraints = false
+//        sb.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
+//        return sb
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         collectionView.register(CourseCollectionViewCell.self, forCellWithReuseIdentifier: "courseCell")
 
-        self.view.addSubview(searchBar)
+//        self.view.addSubview(searchBar)
         self.view.addSubview(collectionView)
         
         setupViews()
@@ -66,11 +66,11 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -98,11 +98,11 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func setupViews() {
         
-        searchBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        searchBar.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-        searchBar.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+//        searchBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+//        searchBar.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+//        searchBar.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         
-        collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 0).isActive = true
+        collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
@@ -121,7 +121,7 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
             let height = width / 1.25
             return CGSize(width: width, height: height)
         } else if (self.view.traitCollection.verticalSizeClass == .regular && self.view.traitCollection.horizontalSizeClass == .regular) {
-            var width = (self.view.bounds.width / 5)-20
+            var width = (self.view.bounds.width / 4)-20
             if UIDevice().userInterfaceIdiom == .pad {
                 if UIDevice.current.orientation == .portrait {
                     width = (self.view.bounds.width / 3)-20
