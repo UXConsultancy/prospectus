@@ -15,6 +15,7 @@ class CourseCollectionViewCell: UICollectionViewCell {
     var courseTitle: String?
     var courseType: String?
     var courseBoard: String?
+    var courseBackgroundImage: String?
     
     var courseImageView: UIImageView = {
         var image = UIImageView()
@@ -32,12 +33,6 @@ class CourseCollectionViewCell: UICollectionViewCell {
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         return image
-    }()
-    
-    var blurEffect: UIBlurEffect = {
-        var blur = UIBlurEffect()
-        
-        return blur
     }()
     
     var courseTitleView: UITextView = {
@@ -79,13 +74,15 @@ class CourseCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
+    var blurView: UIVisualEffectView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         // cell styling
         self.courseView.layer.cornerRadius = 10
         self.courseView.layer.masksToBounds = true
-        self.courseView.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
+        self.courseView.backgroundColor = UIColor.clear
         
         self.courseView.layer.borderWidth = 1.5
         let opacity: CGFloat = 0.6
@@ -95,7 +92,13 @@ class CourseCollectionViewCell: UICollectionViewCell {
         // add subviews to cell
         self.contentView.addSubview(courseView)
         courseView.addSubview(courseImageView)
-//        courseView.addSubview(backgroundImageView)
+        courseView.addSubview(backgroundImageView)
+        
+        let blurEffect = UIBlurEffect(style: .regular)
+        blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.addSubview(blurView)
+        
         courseView.addSubview(courseTitleView)
         courseView.addSubview(courseTypeView)
         courseView.addSubview(courseBoardView)
@@ -109,6 +112,7 @@ class CourseCollectionViewCell: UICollectionViewCell {
         
         if let i = courseImage {
             courseImageView.sd_setImage(with: URL(string: i), placeholderImage: UIImage(named: "s6c"))
+            backgroundImageView.sd_setImage(with: URL(string: i), placeholderImage: UIImage(named: "s6c"))
         }
         if let t = courseTitle {
             courseTitleView.text = t
@@ -135,6 +139,18 @@ class CourseCollectionViewCell: UICollectionViewCell {
         courseImageView.leftAnchor.constraint(equalTo: courseView.leftAnchor, constant: 0).isActive = true
         courseImageView.rightAnchor.constraint(equalTo: courseView.rightAnchor, constant: 0).isActive = true
         courseImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        
+        // backgroundImageView
+        backgroundImageView.topAnchor.constraint(equalTo: courseImageView.bottomAnchor, constant: 0).isActive = true
+        backgroundImageView.leadingAnchor.constraint(equalTo: courseView.leadingAnchor, constant: 0).isActive = true
+        backgroundImageView.trailingAnchor.constraint(equalTo: courseView.trailingAnchor, constant: 0).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: courseView.bottomAnchor, constant: 0).isActive = true
+        
+        // blurView
+        blurView.topAnchor.constraint(equalTo: backgroundImageView.topAnchor, constant: 0).isActive = true
+        blurView.leadingAnchor.constraint(equalTo: backgroundImageView.leadingAnchor, constant: 0).isActive = true
+        blurView.trailingAnchor.constraint(equalTo: backgroundImageView.trailingAnchor, constant: 0).isActive = true
+        blurView.bottomAnchor.constraint(equalTo: backgroundImageView.bottomAnchor, constant: 0).isActive = true
         
         // courseTitleView
         courseTitleView.topAnchor.constraint(equalTo: courseImageView.bottomAnchor, constant: 0).isActive = true
