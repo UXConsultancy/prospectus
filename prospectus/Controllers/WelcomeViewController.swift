@@ -34,6 +34,22 @@ class WelcomeViewController: UITableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTable), name: NSNotification.Name("gotWelcome"), object: nil)
 
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(leftSwipe)
+        self.view.addGestureRecognizer(rightSwipe)
+        
+    }
+    
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        if sender.direction == .left {
+            self.tabBarController!.selectedIndex += 1
+        }
+        if sender.direction == .right {
+            self.tabBarController!.selectedIndex -= 1
+        }
     }
     
     @objc func reloadTable() {
