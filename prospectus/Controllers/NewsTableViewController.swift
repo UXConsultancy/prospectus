@@ -51,6 +51,9 @@ class NewsTableViewController: UITableViewController {
     
     @objc func reloadData() {
         self.news = modelController.news
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        self.news.sort(by: { formatter.date(from: $0.date!)!  < formatter.date(from: $1.date!)! })
         self.tableView.reloadData()
     }
     

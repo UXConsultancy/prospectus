@@ -74,6 +74,7 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @objc func reloadCollection() {
         self.courses = modelController.courses
+        self.courses.sort(by: { $0.title! < $1.title!})
         self.collectionView.reloadData()
     }
 

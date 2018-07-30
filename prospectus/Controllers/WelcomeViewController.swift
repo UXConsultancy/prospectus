@@ -59,6 +59,9 @@ class WelcomeViewController: UITableViewController {
     
     @objc func reloadTable() {
         self.articles = modelController.welcome
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        self.articles.sort(by: { formatter.date(from: $0.date!)!  < formatter.date(from: $1.date!)! })
         self.tableView.reloadData()
     }
     
