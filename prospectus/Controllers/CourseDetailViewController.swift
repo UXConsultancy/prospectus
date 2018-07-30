@@ -25,6 +25,8 @@ class CourseDetailViewController: UIViewController {
         return sv
     }()
     
+    var addFavouriteButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,11 +42,29 @@ class CourseDetailViewController: UIViewController {
         detailView.interestingFactView.text = course.fact
         detailView.typeView.text = course.type
         
+
+        
+        addFavouriteButton = UIBarButtonItem(image: UIImage(named: "favourites_light")!, style: .plain, target: self, action:#selector(CourseDetailViewController.btnAddFavourite))
+        self.navigationItem.rightBarButtonItem = addFavouriteButton
         
         self.view.addSubview(scrollView)
         scrollView.addSubview(detailView)
         
         setupViews()
+    }
+    
+    var selected: Bool? = false
+    @objc func btnAddFavourite() {
+        switch selected {
+        case nil, true:
+            addFavouriteButton.image = UIImage(named: "favourites_light")!
+            selected = false
+        case false:
+            addFavouriteButton.image = UIImage(named: "favourites_dark")!
+            selected = true
+        default:
+            print("error")
+        }
     }
     
     @objc func refreshView() {
