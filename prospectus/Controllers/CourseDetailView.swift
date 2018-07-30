@@ -119,7 +119,11 @@ class CourseDetailView: UIView {
         imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
         imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        if UIDevice().userInterfaceIdiom == .pad {
+            imageView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        } else {
+            imageView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        }
         imageView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: 0).isActive = true
         
         // typeView
