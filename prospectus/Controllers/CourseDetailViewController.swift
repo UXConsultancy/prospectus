@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Toast_Swift
 
 class CourseDetailViewController: UIViewController {
 
@@ -59,9 +60,15 @@ class CourseDetailViewController: UIViewController {
         case nil, true:
             addFavouriteButton.image = UIImage(named: "favourites_light")!
             selected = false
+            if let text = course.title {
+                self.view.makeToast("\(text) removed from favourites", duration: 2.0, position: .top)
+            }
         case false:
             addFavouriteButton.image = UIImage(named: "favourites_dark")!
             selected = true
+            if let text = course.title {
+                self.view.makeToast("\(text) added to favourites", duration: 2.0, position: .top)
+            }
         default:
             print("error")
         }

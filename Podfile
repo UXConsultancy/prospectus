@@ -10,5 +10,5 @@ target 'prospectus' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'SDWebImage', '~> 4.0'
-
+  pod 'Toast-Swift', '~> 3.0.1'
 end

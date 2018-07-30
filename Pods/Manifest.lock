@@ -69,11 +69,13 @@ PODS:
   - SDWebImage (4.4.1):
     - SDWebImage/Core (= 4.4.1)
   - SDWebImage/Core (4.4.1)
+  - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - SDWebImage (~> 4.0)
+  - Toast-Swift (~> 3.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -92,6 +94,7 @@ SPEC REPOS:
     - nanopb
     - Protobuf
     - SDWebImage
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   BoringSSL: cf3f1793eb6e3c445c4d150456341f149c268a35
@@ -109,7 +112,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: c8c0be501838c64373b7cc8a01fc8247b0c1c307
+PODFILE CHECKSUM: 5984fc764f670b942cbc7f7a1d3a023407966fdb
 
 COCOAPODS: 1.5.3
