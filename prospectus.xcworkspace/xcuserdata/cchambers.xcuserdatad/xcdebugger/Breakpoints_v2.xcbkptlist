@@ -42,13 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Controllers/NewsTableViewController.swift"
-            timestampString = "554638255.008858"
+            timestampString = "554640512.929587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "NewsTableViewController"
-            landmarkType = "3">
+            startingLineNumber = "78"
+            endingLineNumber = "78">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,13 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Controllers/NewsTableViewController.swift"
-            timestampString = "554638255.008913"
+            timestampString = "554640512.929662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "NewsTableViewController"
-            landmarkType = "3">
+            startingLineNumber = "78"
+            endingLineNumber = "78">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -152,7 +148,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Cells/ArticleTableViewCell.swift"
-            timestampString = "554638255.009033"
+            timestampString = "554640512.929827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -168,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Cells/ArticleTableViewCell.swift"
-            timestampString = "554638255.009086"
+            timestampString = "554640512.929897"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -184,7 +180,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Controllers/WelcomeViewController.swift"
-            timestampString = "554638255.009135"
+            timestampString = "554640512.929958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -200,7 +196,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Controllers/ModelController.swift"
-            timestampString = "554638255.009194"
+            timestampString = "554640512.930014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -214,7 +210,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Helpers/AddDataToDataBaseForTesting.swift"
-            timestampString = "554638255.009261"
+            timestampString = "554640512.930073"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -230,7 +226,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Helpers/AddDataToDataBaseForTesting.swift"
-            timestampString = "554638255.009304"
+            timestampString = "554640512.930122"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -246,7 +242,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Controllers/CourseDetailViewController.swift"
-            timestampString = "554638255.009346"
+            timestampString = "554640512.930172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"

@@ -106,7 +106,12 @@ class ArticleTableViewCell: UITableViewCell {
         articleImageView.topAnchor.constraint(equalTo: articleView.topAnchor, constant: 0).isActive = true
         articleImageView.leftAnchor.constraint(equalTo: articleView.leftAnchor, constant: 0).isActive = true
         articleImageView.rightAnchor.constraint(equalTo: articleView.rightAnchor, constant: 0).isActive = true
-        articleImageView.heightAnchor.constraint(equalToConstant: 230).isActive = true
+        if UIDevice().userInterfaceIdiom == .pad {
+            articleImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 430).isActive = true
+        } else {
+            articleImageView.heightAnchor.constraint(equalToConstant: 230).isActive = true
+        }
+        
         
         // articleTitleView
         articleTitleView.topAnchor.constraint(equalTo: articleImageView.bottomAnchor, constant: 8).isActive = true

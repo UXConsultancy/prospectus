@@ -137,10 +137,10 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
             let height = width / 1.25
             return CGSize(width: width, height: height)
         } else if (self.view.traitCollection.verticalSizeClass == .regular && self.view.traitCollection.horizontalSizeClass == .regular) {
-            var width = (self.view.bounds.width / 4)-20
+            var width = (self.view.bounds.width / 3)-20
             if UIDevice().userInterfaceIdiom == .pad {
                 if UIDevice.current.orientation == .portrait {
-                    width = (self.view.bounds.width / 3)-20
+                    width = (self.view.bounds.width / 2)-20
                 }
             }
             let height = width / 1.25

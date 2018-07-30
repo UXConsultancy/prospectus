@@ -27,8 +27,13 @@ class WelcomeViewController: UITableViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        tableView.estimatedRowHeight = 324
+//        tableView.estimatedRowHeight = 324
+        if UIDevice().userInterfaceIdiom == .pad {
+            tableView.rowHeight = 500
+        } else {
         tableView.rowHeight = 324 //UITableViewAutomaticDimension
+//        tableView.rowHeight = UITableViewAutomaticDimension
+        }
         
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "welcome")
         

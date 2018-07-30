@@ -20,8 +20,12 @@ class NewsTableViewController: UITableViewController {
         self.title = "News"
         self.view.backgroundColor = UIColor.white
 //        self.navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.estimatedRowHeight = 324
-        tableView.rowHeight = 324 // UITableViewAutomaticDimension
+        if UIDevice().userInterfaceIdiom == .pad {
+            tableView.rowHeight = 500
+        } else {
+            tableView.rowHeight = 324 //UITableViewAutomaticDimension
+            //        tableView.rowHeight = UITableViewAutomaticDimension
+        }
         modelController = ModelController()
         
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "news")

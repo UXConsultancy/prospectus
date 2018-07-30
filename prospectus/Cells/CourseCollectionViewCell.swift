@@ -138,7 +138,6 @@ class CourseCollectionViewCell: UICollectionViewCell {
         courseImageView.topAnchor.constraint(equalTo: courseView.topAnchor, constant: 0).isActive = true
         courseImageView.leftAnchor.constraint(equalTo: courseView.leftAnchor, constant: 0).isActive = true
         courseImageView.rightAnchor.constraint(equalTo: courseView.rightAnchor, constant: 0).isActive = true
-//        courseImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         courseImageView.heightAnchor.constraint(greaterThanOrEqualToConstant: 200).isActive = true
         
         // backgroundImageView
@@ -146,7 +145,7 @@ class CourseCollectionViewCell: UICollectionViewCell {
         backgroundImageView.leadingAnchor.constraint(equalTo: courseView.leadingAnchor, constant: 0).isActive = true
         backgroundImageView.trailingAnchor.constraint(equalTo: courseView.trailingAnchor, constant: 0).isActive = true
         backgroundImageView.bottomAnchor.constraint(equalTo: courseView.bottomAnchor, constant: 0).isActive = true
-        backgroundImageView.heightAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
+        backgroundImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         // blurView
         blurView.topAnchor.constraint(equalTo: backgroundImageView.topAnchor, constant: 0).isActive = true
