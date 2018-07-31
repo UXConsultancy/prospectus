@@ -68,35 +68,36 @@ class CourseCollectionViewCell: UICollectionViewCell {
         return text
     }()
     
-    var courseView: UIView = {
+    let opacity: CGFloat = 0.6
+    let borderColor = UIColor.darkGray
+    
+    lazy var courseView: UIView = {
         var view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
+        view.backgroundColor = UIColor.clear
+        view.layer.borderWidth = 1.5
+        view.layer.borderColor = borderColor.withAlphaComponent(opacity).cgColor
         return view
     }()
     
-    var blurView: UIVisualEffectView!
+    let blurEffect = UIBlurEffect(style: .regular)
+    
+    lazy var blurView: UIVisualEffectView! = {
+        var bv = UIVisualEffectView(effect: blurEffect)
+        bv.translatesAutoresizingMaskIntoConstraints = false
+        return bv
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        // cell styling
-        self.courseView.layer.cornerRadius = 10
-        self.courseView.layer.masksToBounds = true
-        self.courseView.backgroundColor = UIColor.clear
-        
-        self.courseView.layer.borderWidth = 1.5
-        let opacity: CGFloat = 0.6
-        let borderColor = UIColor.darkGray
-        self.courseView.layer.borderColor = borderColor.withAlphaComponent(opacity).cgColor
         
         // add subviews to cell
         self.contentView.addSubview(courseView)
         courseView.addSubview(courseImageView)
         courseView.addSubview(backgroundImageView)
-        
-        let blurEffect = UIBlurEffect(style: .regular)
-        blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.translatesAutoresizingMaskIntoConstraints = false
+
         backgroundImageView.addSubview(blurView)
         
         courseView.addSubview(courseTitleView)

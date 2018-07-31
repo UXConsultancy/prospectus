@@ -10,7 +10,14 @@ import UIKit
 
 class NewsDetailViewController: UIViewController {
     
-    var article: Article!
+    var article: Article! {
+        didSet {
+            detailView.imageView.sd_setImage(with: URL(string: article.image!), placeholderImage: UIImage(named: "s6c"))
+            detailView.titleView.text = article.title
+            detailView.dateView.text = article?.date
+            detailView.textView.text = article?.text
+        }
+    }
     
     var detailView: DetailView! = {
         var dv = DetailView()
@@ -32,11 +39,6 @@ class NewsDetailViewController: UIViewController {
         
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
 
-        detailView.imageView.sd_setImage(with: URL(string: article.image!), placeholderImage: UIImage(named: "s6c"))
-        detailView.titleView.text = article.title
-        detailView.dateView.text = article?.date
-        detailView.textView.text = article?.text
-        
         self.view.addSubview(scrollView)
         scrollView.addSubview(detailView)
 

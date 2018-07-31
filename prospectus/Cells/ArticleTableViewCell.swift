@@ -57,34 +57,36 @@ class ArticleTableViewCell: UITableViewCell {
         return text
     }()
     
-    var articleView: UIView = {
+    let opacity: CGFloat = 0.6
+    let borderColor = UIColor.darkGray
+    
+    lazy var articleView: UIView = {
         var view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
+        view.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
+        view.layer.borderWidth = 1.5
+        view.layer.borderColor = borderColor.withAlphaComponent(opacity).cgColor
         return view
     }()
     
-    var blurView: UIVisualEffectView!
+    let blurEffect = UIBlurEffect(style: .light)
+    
+    lazy var blurView: UIVisualEffectView! = {
+        var bv = UIVisualEffectView(effect: blurEffect)
+        bv.translatesAutoresizingMaskIntoConstraints = false
+        return bv
+    }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        self.articleView.layer.cornerRadius = 10
-        self.articleView.layer.masksToBounds = true
-        self.articleView.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
-        
-        self.articleView.layer.borderWidth = 1.5
-        let opacity: CGFloat = 0.6
-        let borderColor = UIColor.darkGray
-        self.articleView.layer.borderColor = borderColor.withAlphaComponent(opacity).cgColor
-        
+
         // add subviews to cell
         self.contentView.addSubview(articleView)
         articleView.addSubview(articleImageView)
         articleView.addSubview(backgroundImageView)
-        
-        let blurEffect = UIBlurEffect(style: .light)
-        blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.translatesAutoresizingMaskIntoConstraints = false
+
         backgroundImageView.addSubview(blurView)
         
         articleView.addSubview(articleTitleView)

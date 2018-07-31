@@ -12,7 +12,16 @@ import Toast_Swift
 
 class CourseDetailViewController: UIViewController {
 
-    var course: Course!
+    var course: Course! {
+        didSet {
+            detailView.imageView.sd_setImage(with: URL(string: course.image!), placeholderImage: UIImage(named: "s6c"))
+            detailView.boardView.text = course.examBoard
+            detailView.courseDescriptionView.text = course.text
+            detailView.entryRequirementsView.text = course.entryRequirements
+            detailView.interestingFactView.text = course.fact
+            detailView.typeView.text = course.type
+        }
+    }
     
     var detailView: CourseDetailView! = {
         var dv = CourseDetailView()
@@ -35,15 +44,6 @@ class CourseDetailViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
-        
-        detailView.imageView.sd_setImage(with: URL(string: course.image!), placeholderImage: UIImage(named: "s6c"))
-        detailView.boardView.text = course.examBoard
-        detailView.courseDescriptionView.text = course.text
-        detailView.entryRequirementsView.text = course.entryRequirements
-        detailView.interestingFactView.text = course.fact
-        detailView.typeView.text = course.type
-        
-
         
         addFavouriteButton = UIBarButtonItem(image: UIImage(named: "favourites_light")!, style: .plain, target: self, action:#selector(CourseDetailViewController.btnAddFavourite))
         self.navigationItem.rightBarButtonItem = addFavouriteButton
