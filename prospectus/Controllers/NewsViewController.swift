@@ -15,6 +15,7 @@ class NewsTableViewController: UIViewController, UICollectionViewDelegate, UICol
     
     let layout: UICollectionViewFlowLayout = {
         var l = UICollectionViewFlowLayout()
+        l.scrollDirection = UICollectionViewScrollDirection.vertical
         return l
     }()
     
@@ -25,6 +26,8 @@ class NewsTableViewController: UIViewController, UICollectionViewDelegate, UICol
         cv.delegate = self
         cv.dataSource = self
         cv.register(ArticleCollectionViewCell.self, forCellWithReuseIdentifier: "newsCell")
+        cv.backgroundColor = UIColor.white
+        cv.delegate = self
         return cv
     }()
     
@@ -41,12 +44,7 @@ class NewsTableViewController: UIViewController, UICollectionViewDelegate, UICol
         
         self.title = "Welcome"
         self.view.backgroundColor = UIColor.white
-        self.collectionView.backgroundColor = UIColor.white
-        
-        self.collectionView.delegate = self
-        
-        layout.scrollDirection = UICollectionViewScrollDirection.vertical
-        
+
         self.view.addSubview(searchBar)
         self.view.addSubview(collectionView)
         
@@ -101,11 +99,9 @@ class NewsTableViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsCell", for: indexPath) as! ArticleCollectionViewCell
-        //        cell.courseBoard = self.articles[indexPath.row].examBoard
         cell.articleTitle = self.news[indexPath.row].title
         cell.articleImage = self.news[indexPath.row].image
         cell.articleDate = self.news[indexPath.row].date
-        //        cell.courseType = self.articles[indexPath.row].type
         return cell
     }
     

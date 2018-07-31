@@ -15,6 +15,7 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     let layout: UICollectionViewFlowLayout = {
         var l = UICollectionViewFlowLayout()
+        l.scrollDirection = UICollectionViewScrollDirection.vertical
         return l
     }()
 
@@ -25,6 +26,8 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
         cv.delegate = self
         cv.dataSource = self
         cv.register(CourseCollectionViewCell.self, forCellWithReuseIdentifier: "courseCell")
+        cv.backgroundColor = UIColor.white
+        cv.delegate = self
         return cv
     }()
     
@@ -41,11 +44,6 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         self.title = "Courses"
         self.view.backgroundColor = UIColor.white
-        self.collectionView.backgroundColor = UIColor.white
-        
-        self.collectionView.delegate = self
-        
-        layout.scrollDirection = UICollectionViewScrollDirection.vertical
 
         self.view.addSubview(searchBar)
         self.view.addSubview(collectionView)

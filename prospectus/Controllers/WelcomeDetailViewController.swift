@@ -13,9 +13,13 @@ class WelcomeDetailViewController: UIViewController {
     
     var article: Article!
     
-    var detailView: DetailView! = {
+    lazy var detailView: DetailView! = {
         var dv = DetailView()
         dv.translatesAutoresizingMaskIntoConstraints = false
+        dv.imageView.sd_setImage(with: URL(string: article.image!), placeholderImage: UIImage(named: "s6c"))
+        dv.titleView.text = article.title
+        dv.dateView.text = article?.date
+        dv.textView.text = article?.text
         return dv
     }()
     
@@ -28,13 +32,7 @@ class WelcomeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.title = article?.title
         self.view.backgroundColor = UIColor.white
-        
-        detailView.imageView.sd_setImage(with: URL(string: article.image!), placeholderImage: UIImage(named: "s6c"))
-        detailView.titleView.text = article.title
-        detailView.dateView.text = article?.date
-        detailView.textView.text = article?.text
         
         self.view.addSubview(scrollView)
         scrollView.addSubview(detailView)
