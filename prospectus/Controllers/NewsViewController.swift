@@ -1,5 +1,5 @@
 //
-//  TestWelcome.swift
+//  TestNews.swift
 //  prospectus
 //
 //  Created by Craig Chambers on 31/07/2018.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class NewsTableViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var modelController: ModelController!
-    var articles: [Article]! = []
+    var news: [Article]! = []
     
     let layout: UICollectionViewFlowLayout = {
         var l = UICollectionViewFlowLayout()
@@ -24,16 +24,16 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         cv.setCollectionViewLayout(layout, animated: true)
         cv.delegate = self
         cv.dataSource = self
-        cv.register(ArticleCollectionViewCell.self, forCellWithReuseIdentifier: "welcomeCell")
+        cv.register(ArticleCollectionViewCell.self, forCellWithReuseIdentifier: "newsCell")
         return cv
     }()
     
-//    let searchBar: UISearchBar = {
-//        var sb = UISearchBar()
-//        sb.translatesAutoresizingMaskIntoConstraints = false
-//        sb.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
-//        return sb
-//    }()
+    let searchBar: UISearchBar = {
+        var sb = UISearchBar()
+        sb.translatesAutoresizingMaskIntoConstraints = false
+        sb.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
+        return sb
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         layout.scrollDirection = UICollectionViewScrollDirection.vertical
         
-//        self.view.addSubview(searchBar)
+        self.view.addSubview(searchBar)
         self.view.addSubview(collectionView)
         
         setupViews()
@@ -72,10 +72,10 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     @objc func reloadCollection() {
-        self.articles = modelController.welcome
+        self.news = modelController.news
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy HH:mm"
-        self.articles.sort(by: { formatter.date(from: $0.date!)!  < formatter.date(from: $1.date!)! })
+        self.news.sort(by: { formatter.date(from: $0.date!)!  < formatter.date(from: $1.date!)! })
         self.collectionView.reloadData()
     }
     
@@ -96,30 +96,32 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return articles.count
+        return news.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "welcomeCell", for: indexPath) as! ArticleCollectionViewCell
-        cell.articleTitle = self.articles[indexPath.row].title
-        cell.articleImage = self.articles[indexPath.row].image
-        cell.articleDate = self.articles[indexPath.row].date
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsCell", for: indexPath) as! ArticleCollectionViewCell
+        //        cell.courseBoard = self.articles[indexPath.row].examBoard
+        cell.articleTitle = self.news[indexPath.row].title
+        cell.articleImage = self.news[indexPath.row].image
+        cell.articleDate = self.news[indexPath.row].date
+        //        cell.courseType = self.articles[indexPath.row].type
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = WelcomeDetailViewController()
-        vc.article = articles[indexPath.row]
+        vc.article = news[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func setupViews() {
         
-//        searchBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        searchBar.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-//        searchBar.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        searchBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        searchBar.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+        searchBar.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         
-        collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 0).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
@@ -165,3 +167,4 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
 }
+

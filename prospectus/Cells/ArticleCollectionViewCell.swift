@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class ArticleTableViewCell: UITableViewCell {
+class ArticleCollectionViewCell: UICollectionViewCell {
     
     var articleImage: String?
     var articleTitle: String?
@@ -79,8 +79,8 @@ class ArticleTableViewCell: UITableViewCell {
         return bv
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
 
         // add subviews to cell
         self.contentView.addSubview(articleView)
