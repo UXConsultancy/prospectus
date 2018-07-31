@@ -24,7 +24,6 @@
 		07F0A0D32107138900EA2BD9 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0A0D22107138900EA2BD9 /* ModelController.swift */; };
 		07F0A0D9210A09A300EA2BD9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0A0D8210A09A300EA2BD9 /* DetailView.swift */; };
 		07F0A0DB210A0D7000EA2BD9 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0A0DA210A0D7000EA2BD9 /* NewsDetailViewController.swift */; };
-		07F0A0DD210B33E300EA2BD9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0A0DC210B33E300EA2BD9 /* Extensions.swift */; };
 		07FEDEA32100E139008F25A3 /* WelcomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEDEA22100E139008F25A3 /* WelcomeDetailViewController.swift */; };
 		07FEDEBA2101EF39008F25A3 /* DatesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEDEB92101EF39008F25A3 /* DatesHelper.swift */; };
 		07FEDEBC210200A3008F25A3 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEDEBB210200A3008F25A3 /* FirebaseHelper.swift */; };
@@ -52,7 +51,6 @@
 		07F0A0D22107138900EA2BD9 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		07F0A0D8210A09A300EA2BD9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = prospectus/Helpers/DetailView.swift; sourceTree = SOURCE_ROOT; };
 		07F0A0DA210A0D7000EA2BD9 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
-		07F0A0DC210B33E300EA2BD9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		07FEDEA22100E139008F25A3 /* WelcomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDetailViewController.swift; sourceTree = "<group>"; };
 		07FEDEB92101EF39008F25A3 /* DatesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesHelper.swift; sourceTree = "<group>"; };
 		07FEDEBB210200A3008F25A3 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				07FEDEB92101EF39008F25A3 /* DatesHelper.swift */,
 				07FEDEBB210200A3008F25A3 /* FirebaseHelper.swift */,
 				07FEDEBF21023831008F25A3 /* FBCollectionReference.swift */,
-				07F0A0DC210B33E300EA2BD9 /* Extensions.swift */,
 				0769FF70210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift */,
 			);
 			path = Helpers;
@@ -323,7 +320,6 @@
 				0779682D20FFB50E00AAB14E /* ArticleCollectionViewCell.swift in Sources */,
 				07F0A0DB210A0D7000EA2BD9 /* NewsDetailViewController.swift in Sources */,
 				07FEDEBA2101EF39008F25A3 /* DatesHelper.swift in Sources */,
-				07F0A0DD210B33E300EA2BD9 /* Extensions.swift in Sources */,
 				0751044F20FDD80F00998B87 /* FavouritesViewController.swift in Sources */,
 				07FEDEC021023831008F25A3 /* FBCollectionReference.swift in Sources */,
 				0769FF7D2110536C00A7B83F /* WelcomeViewController.swift in Sources */,

@@ -34,7 +34,6 @@ class NewsDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.title = article?.title
         self.view.backgroundColor = UIColor.white
         
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never

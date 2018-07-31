@@ -11,16 +11,9 @@ import Foundation
 func convertDateToString(dateObject: Date) -> String {
 
     let formatter = DateFormatter()
-    // initially set the format based on your datepicker date / server String
     formatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
 
     let myString = formatter.string(from: dateObject) // string purpose I add here
-//    // convert your string to date
-//    let yourDate = formatter.date(from: myString)
-//    //then again set the date format whhich type of output you need
-//    formatter.dateFormat = "dd-MMM-yyyy"
-//    // again convert your date to string
-//    let myStringafd = formatter.string(from: yourDate!)
 
     return myString
 }

@@ -44,7 +44,6 @@ class FBHelper {
                 var objects = [T]()
                 for article in articles.documents {
                     let object = try article.decode(as: objectType.self)
-//                        objects.append(object)
                     var test = objects.count
                     if objects.count < 0 {
                         test = 1
