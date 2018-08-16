@@ -9,22 +9,13 @@
 /* Begin PBXBuildFile section */
 		0751043220FD2F4600998B87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751043120FD2F4600998B87 /* AppDelegate.swift */; };
 		0751043920FD2F4600998B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0751043820FD2F4600998B87 /* Assets.xcassets */; };
-		0751044920FDD79800998B87 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751044820FDD79800998B87 /* MainTabBarController.swift */; };
-		0751044D20FDD80200998B87 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751044C20FDD80200998B87 /* CoursesViewController.swift */; };
-		0751044F20FDD80F00998B87 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751044E20FDD80F00998B87 /* FavouritesViewController.swift */; };
 		0769FF71210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF70210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift */; };
-		0769FF73210CA96300A7B83F /* CourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF72210CA96300A7B83F /* CourseCollectionViewCell.swift */; };
-		0769FF75210CC45200A7B83F /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF74210CC45200A7B83F /* CourseDetailViewController.swift */; };
-		0769FF77210CC47500A7B83F /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF76210CC47500A7B83F /* CourseDetailView.swift */; };
-		0769FF7D2110536C00A7B83F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF7C2110536C00A7B83F /* WelcomeViewController.swift */; };
-		0769FF7F211054EB00A7B83F /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF7E211054EB00A7B83F /* NewsViewController.swift */; };
 		0779682720FF9BBF00AAB14E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779682620FF9BBF00AAB14E /* Models.swift */; };
-		0779682D20FFB50E00AAB14E /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779682C20FFB50E00AAB14E /* ArticleCollectionViewCell.swift */; };
+		07D636022125F46400942BF9 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D636012125F46400942BF9 /* TestTableViewController.swift */; };
+		07D636042125F57800942BF9 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D636032125F57800942BF9 /* TestTableViewCell.swift */; };
+		07D636062125F62500942BF9 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D636052125F62500942BF9 /* MainStoryBoard.storyboard */; };
 		07E66A9720FF8897001EAF24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E66A9620FF8897001EAF24 /* GoogleService-Info.plist */; };
 		07F0A0D32107138900EA2BD9 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0A0D22107138900EA2BD9 /* ModelController.swift */; };
-		07F0A0D9210A09A300EA2BD9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0A0D8210A09A300EA2BD9 /* DetailView.swift */; };
-		07F0A0DB210A0D7000EA2BD9 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0A0DA210A0D7000EA2BD9 /* NewsDetailViewController.swift */; };
-		07FEDEA32100E139008F25A3 /* WelcomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEDEA22100E139008F25A3 /* WelcomeDetailViewController.swift */; };
 		07FEDEBA2101EF39008F25A3 /* DatesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEDEB92101EF39008F25A3 /* DatesHelper.swift */; };
 		07FEDEBC210200A3008F25A3 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEDEBB210200A3008F25A3 /* FirebaseHelper.swift */; };
 		07FEDEC021023831008F25A3 /* FBCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEDEBF21023831008F25A3 /* FBCollectionReference.swift */; };
@@ -37,22 +28,13 @@
 		0751043120FD2F4600998B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0751043820FD2F4600998B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0751043D20FD2F4600998B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0751044820FDD79800998B87 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		0751044C20FDD80200998B87 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
-		0751044E20FDD80F00998B87 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		0769FF70210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDataToDataBaseForTesting.swift; sourceTree = "<group>"; };
-		0769FF72210CA96300A7B83F /* CourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCollectionViewCell.swift; sourceTree = "<group>"; };
-		0769FF74210CC45200A7B83F /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
-		0769FF76210CC47500A7B83F /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseDetailView.swift; path = prospectus/Controllers/CourseDetailView.swift; sourceTree = SOURCE_ROOT; };
-		0769FF7C2110536C00A7B83F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		0769FF7E211054EB00A7B83F /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		0779682620FF9BBF00AAB14E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		0779682C20FFB50E00AAB14E /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
+		07D636012125F46400942BF9 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		07D636032125F57800942BF9 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestTableViewCell.swift; path = prospectus/Controllers/TestTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		07D636052125F62500942BF9 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryBoard.storyboard; sourceTree = "<group>"; };
 		07E66A9620FF8897001EAF24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07F0A0D22107138900EA2BD9 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		07F0A0D8210A09A300EA2BD9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = prospectus/Helpers/DetailView.swift; sourceTree = SOURCE_ROOT; };
-		07F0A0DA210A0D7000EA2BD9 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
-		07FEDEA22100E139008F25A3 /* WelcomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDetailViewController.swift; sourceTree = "<group>"; };
 		07FEDEB92101EF39008F25A3 /* DatesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesHelper.swift; sourceTree = "<group>"; };
 		07FEDEBB210200A3008F25A3 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		07FEDEBF21023831008F25A3 /* FBCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBCollectionReference.swift; sourceTree = "<group>"; };
@@ -93,6 +75,7 @@
 		0751043020FD2F4600998B87 /* prospectus */ = {
 			isa = PBXGroup;
 			children = (
+				07D636052125F62500942BF9 /* MainStoryBoard.storyboard */,
 				0751043120FD2F4600998B87 /* AppDelegate.swift */,
 				0751044520FDD08B00998B87 /* Models */,
 				0751044420FDD08400998B87 /* Controllers */,
@@ -109,8 +92,7 @@
 		0751044320FDD07B00998B87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				07F0A0D8210A09A300EA2BD9 /* DetailView.swift */,
-				0769FF76210CC47500A7B83F /* CourseDetailView.swift */,
+				07D636032125F57800942BF9 /* TestTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,15 +100,8 @@
 		0751044420FDD08400998B87 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				07D636012125F46400942BF9 /* TestTableViewController.swift */,
 				07F0A0D22107138900EA2BD9 /* ModelController.swift */,
-				0751044820FDD79800998B87 /* MainTabBarController.swift */,
-				0769FF7C2110536C00A7B83F /* WelcomeViewController.swift */,
-				07FEDEA22100E139008F25A3 /* WelcomeDetailViewController.swift */,
-				0769FF7E211054EB00A7B83F /* NewsViewController.swift */,
-				07F0A0DA210A0D7000EA2BD9 /* NewsDetailViewController.swift */,
-				0751044C20FDD80200998B87 /* CoursesViewController.swift */,
-				0769FF74210CC45200A7B83F /* CourseDetailViewController.swift */,
-				0751044E20FDD80F00998B87 /* FavouritesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,8 +128,6 @@
 		0779682B20FFB4D900AAB14E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				0779682C20FFB50E00AAB14E /* ArticleCollectionViewCell.swift */,
-				0769FF72210CA96300A7B83F /* CourseCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -236,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D636062125F62500942BF9 /* MainStoryBoard.storyboard in Resources */,
 				0751043920FD2F4600998B87 /* Assets.xcassets in Resources */,
 				07E66A9720FF8897001EAF24 /* GoogleService-Info.plist in Resources */,
 			);
@@ -305,25 +279,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0769FF77210CC47500A7B83F /* CourseDetailView.swift in Sources */,
 				0751043220FD2F4600998B87 /* AppDelegate.swift in Sources */,
-				0751044D20FDD80200998B87 /* CoursesViewController.swift in Sources */,
 				0779682720FF9BBF00AAB14E /* Models.swift in Sources */,
-				07F0A0D9210A09A300EA2BD9 /* DetailView.swift in Sources */,
-				0751044920FDD79800998B87 /* MainTabBarController.swift in Sources */,
-				07FEDEA32100E139008F25A3 /* WelcomeDetailViewController.swift in Sources */,
-				0769FF7F211054EB00A7B83F /* NewsViewController.swift in Sources */,
+				07D636022125F46400942BF9 /* TestTableViewController.swift in Sources */,
 				0769FF71210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift in Sources */,
 				07F0A0D32107138900EA2BD9 /* ModelController.swift in Sources */,
-				0779682D20FFB50E00AAB14E /* ArticleCollectionViewCell.swift in Sources */,
-				07F0A0DB210A0D7000EA2BD9 /* NewsDetailViewController.swift in Sources */,
 				07FEDEBA2101EF39008F25A3 /* DatesHelper.swift in Sources */,
-				0751044F20FDD80F00998B87 /* FavouritesViewController.swift in Sources */,
 				07FEDEC021023831008F25A3 /* FBCollectionReference.swift in Sources */,
-				0769FF7D2110536C00A7B83F /* WelcomeViewController.swift in Sources */,
-				0769FF73210CA96300A7B83F /* CourseCollectionViewCell.swift in Sources */,
-				0769FF75210CC45200A7B83F /* CourseDetailViewController.swift in Sources */,
 				07FEDEBC210200A3008F25A3 /* FirebaseHelper.swift in Sources */,
+				07D636042125F57800942BF9 /* TestTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

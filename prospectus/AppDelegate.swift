@@ -22,18 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBHelper.shared.configure()
         
         
-        // set light statusbar
-        UIApplication.shared.statusBarStyle = .lightContent
-        
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        
-        // Create ViewControllers
-        let mainTabBarController = MainTabBarController()
-     
-        // Load main window
-        window!.rootViewController = mainTabBarController
-        window!.makeKeyAndVisible()
+//        // set light statusbar
+//        UIApplication.shared.statusBarStyle = .lightContent
+//        
+//        
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        
+//        // Create ViewControllers
+////        let mainTabBarController = MainTabBarController()
+//        let testTableViewController = TestTableViewController()
+//     
+//        // Load main window
+//        window!.rootViewController = testTableViewController
+////        window!.rootViewController = mainTabBarController
+//        window!.makeKeyAndVisible()
         
         //change titlebar colours
         UINavigationBar.appearance().barTintColor = UIColor(red: 102.0/255.0, green: 44.0/255.0, blue: 144.0/255.0, alpha: 1.0)
