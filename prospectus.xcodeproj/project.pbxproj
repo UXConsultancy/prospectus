@@ -11,9 +11,8 @@
 		0751043920FD2F4600998B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0751043820FD2F4600998B87 /* Assets.xcassets */; };
 		0769FF71210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769FF70210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift */; };
 		0779682720FF9BBF00AAB14E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779682620FF9BBF00AAB14E /* Models.swift */; };
-		07D636022125F46400942BF9 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D636012125F46400942BF9 /* TestTableViewController.swift */; };
-		07D636042125F57800942BF9 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D636032125F57800942BF9 /* TestTableViewCell.swift */; };
-		07D636062125F62500942BF9 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D636052125F62500942BF9 /* MainStoryBoard.storyboard */; };
+		07D6362C212723D800942BF9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D6362B212723D800942BF9 /* MainViewController.swift */; };
+		07D636362127280400942BF9 /* WelcomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D636352127280400942BF9 /* WelcomeCell.swift */; };
 		07E66A9720FF8897001EAF24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E66A9620FF8897001EAF24 /* GoogleService-Info.plist */; };
 		07F0A0D32107138900EA2BD9 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0A0D22107138900EA2BD9 /* ModelController.swift */; };
 		07FEDEBA2101EF39008F25A3 /* DatesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEDEB92101EF39008F25A3 /* DatesHelper.swift */; };
@@ -30,9 +29,8 @@
 		0751043D20FD2F4600998B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0769FF70210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDataToDataBaseForTesting.swift; sourceTree = "<group>"; };
 		0779682620FF9BBF00AAB14E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		07D636012125F46400942BF9 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
-		07D636032125F57800942BF9 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestTableViewCell.swift; path = prospectus/Controllers/TestTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		07D636052125F62500942BF9 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryBoard.storyboard; sourceTree = "<group>"; };
+		07D6362B212723D800942BF9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		07D636352127280400942BF9 /* WelcomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeCell.swift; sourceTree = "<group>"; };
 		07E66A9620FF8897001EAF24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07F0A0D22107138900EA2BD9 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		07FEDEB92101EF39008F25A3 /* DatesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesHelper.swift; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 		0751043020FD2F4600998B87 /* prospectus */ = {
 			isa = PBXGroup;
 			children = (
-				07D636052125F62500942BF9 /* MainStoryBoard.storyboard */,
 				0751043120FD2F4600998B87 /* AppDelegate.swift */,
 				0751044520FDD08B00998B87 /* Models */,
 				0751044420FDD08400998B87 /* Controllers */,
@@ -92,7 +89,7 @@
 		0751044320FDD07B00998B87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				07D636032125F57800942BF9 /* TestTableViewCell.swift */,
+				07D636352127280400942BF9 /* WelcomeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -100,8 +97,9 @@
 		0751044420FDD08400998B87 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				07D636012125F46400942BF9 /* TestTableViewController.swift */,
 				07F0A0D22107138900EA2BD9 /* ModelController.swift */,
+				07D636342127280400942BF9 /* Controllers */,
+				07D6362B212723D800942BF9 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -130,6 +128,13 @@
 			children = (
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		07D636342127280400942BF9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		8CEF46C5AECBF81146E7D921 /* Frameworks */ = {
@@ -209,7 +214,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07D636062125F62500942BF9 /* MainStoryBoard.storyboard in Resources */,
 				0751043920FD2F4600998B87 /* Assets.xcassets in Resources */,
 				07E66A9720FF8897001EAF24 /* GoogleService-Info.plist in Resources */,
 			);
@@ -280,14 +284,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0751043220FD2F4600998B87 /* AppDelegate.swift in Sources */,
+				07D636362127280400942BF9 /* WelcomeCell.swift in Sources */,
 				0779682720FF9BBF00AAB14E /* Models.swift in Sources */,
-				07D636022125F46400942BF9 /* TestTableViewController.swift in Sources */,
 				0769FF71210B8C0E00A7B83F /* AddDataToDataBaseForTesting.swift in Sources */,
 				07F0A0D32107138900EA2BD9 /* ModelController.swift in Sources */,
 				07FEDEBA2101EF39008F25A3 /* DatesHelper.swift in Sources */,
 				07FEDEC021023831008F25A3 /* FBCollectionReference.swift in Sources */,
+				07D6362C212723D800942BF9 /* MainViewController.swift in Sources */,
 				07FEDEBC210200A3008F25A3 /* FirebaseHelper.swift in Sources */,
-				07D636042125F57800942BF9 /* TestTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
