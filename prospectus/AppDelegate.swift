@@ -29,8 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         // Create ViewControllers
-        let layout = UICollectionViewLayout()
-        let mainViewController = MainViewController(collectionViewLayout: layout)
+        let mainViewController = MainViewController()
      
         // Load main window
         window!.rootViewController = UINavigationController(rootViewController: mainViewController)
