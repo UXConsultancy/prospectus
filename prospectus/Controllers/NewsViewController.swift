@@ -101,7 +101,7 @@ class NewsTableViewController: UIViewController, UICollectionViewDelegate, UICol
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsCell", for: indexPath) as! ArticleCollectionViewCell
         cell.articleTitle = self.news[indexPath.row].title
         cell.articleImage = self.news[indexPath.row].image
-        cell.articleDate = self.news[indexPath.row].date
+//        cell.articleDate = self.news[indexPath.row].date
         return cell
     }
     

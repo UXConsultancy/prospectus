@@ -15,6 +15,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     let layout: UICollectionViewFlowLayout = {
         var l = UICollectionViewFlowLayout()
+        l.scrollDirection = .horizontal // not making a difference!
         return l
     }()
     
@@ -27,27 +28,19 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         cv.register(ArticleCollectionViewCell.self, forCellWithReuseIdentifier: "welcomeCell")
         return cv
     }()
-    
-//    let searchBar: UISearchBar = {
-//        var sb = UISearchBar()
-//        sb.translatesAutoresizingMaskIntoConstraints = false
-//        sb.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
-//        return sb
-//    }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         modelController = ModelController()
         
-        self.title = "Welcome"
+        self.title = "S6C Prospectus"
         self.view.backgroundColor = UIColor.white
         self.collectionView.backgroundColor = UIColor.white
         
         self.collectionView.delegate = self
         
-        layout.scrollDirection = UICollectionViewScrollDirection.vertical
+        layout.scrollDirection = UICollectionViewScrollDirection.horizontal
         
-//        self.view.addSubview(searchBar)
         self.view.addSubview(collectionView)
         
         setupViews()
@@ -88,7 +81,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -103,7 +96,6 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "welcomeCell", for: indexPath) as! ArticleCollectionViewCell
         cell.articleTitle = self.articles[indexPath.row].title
         cell.articleImage = self.articles[indexPath.row].image
-        cell.articleDate = self.articles[indexPath.row].date
         return cell
     }
     
@@ -114,15 +106,11 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func setupViews() {
-        
-//        searchBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        searchBar.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-//        searchBar.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-        
+
         collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 250).isActive = true
         
     }
     
@@ -133,35 +121,9 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     fileprivate func getLayoutSize() -> CGSize {
-        if (self.view.traitCollection.verticalSizeClass == .regular && self.view.traitCollection.horizontalSizeClass == .compact) {
-            let width = (self.view.bounds.width / 1)-20
-            let height = width / 1.25
-            return CGSize(width: width, height: height)
-        } else if (self.view.traitCollection.verticalSizeClass == .regular && self.view.traitCollection.horizontalSizeClass == .regular) {
-            var width = (self.view.bounds.width / 3)-20
-            if UIDevice().userInterfaceIdiom == .pad {
-                if UIDevice.current.orientation == .portrait {
-                    width = (self.view.bounds.width / 2)-20
-                }
-            }
-            let height = width / 1.25
-            return CGSize(width: width, height: height)
-        } else if (self.view.traitCollection.verticalSizeClass == .compact && self.view.traitCollection.horizontalSizeClass == .regular) {
-            let width = (self.view.bounds.width / 2)-20
-            let height = width / 1.25
-            return CGSize(width: width, height: height)
-        } else if (self.view.traitCollection.verticalSizeClass == .compact && self.view.traitCollection.horizontalSizeClass == .compact) {
-            var width = (self.view.bounds.width / 2)-20
-            if UIDevice().userInterfaceIdiom == .phone {
-                if UIScreen.main.nativeBounds.height == 2436 {
-                    width = (self.view.bounds.width / 2)-60
-                }
-            }
-            let height = width / 1.25
-            return CGSize(width: width, height: height)
-        } else {
-            return CGSize(width: self.view.bounds.width-20, height: self.view.bounds.width-20*1.25)
-        }
+        let width = view.bounds.width*0.90
+        let height = (view.bounds.width*0.95)/1.667
+        return CGSize(width: width, height: height)
     }
     
 }
