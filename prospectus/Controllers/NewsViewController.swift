@@ -42,6 +42,8 @@ class NewsTableViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLoad()
         modelController = ModelController()
         
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         self.title = "Welcome"
         self.view.backgroundColor = UIColor.white
 

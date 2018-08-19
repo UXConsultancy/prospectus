@@ -31,21 +31,23 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cv
     }()
     
-    let searchBar: UISearchBar = {
-        var sb = UISearchBar()
-        sb.translatesAutoresizingMaskIntoConstraints = false
-        sb.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
-        return sb
-    }()
+//    let searchBar: UISearchBar = {
+//        var sb = UISearchBar()
+//        sb.translatesAutoresizingMaskIntoConstraints = false
+//        sb.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
+//        return sb
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         modelController = ModelController()
         
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         self.title = "Courses"
         self.view.backgroundColor = UIColor.white
 
-        self.view.addSubview(searchBar)
+//        self.view.addSubview(searchBar)
         self.view.addSubview(collectionView)
         
         setupViews()
@@ -112,11 +114,11 @@ class CoursesViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func setupViews() {
         
-        searchBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        searchBar.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-        searchBar.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+//        searchBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+//        searchBar.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+//        searchBar.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         
-        collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 0).isActive = true
+        collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true

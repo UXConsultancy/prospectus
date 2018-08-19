@@ -33,6 +33,9 @@ class WelcomeDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.white
+        self.title = article.title
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         self.view.addSubview(scrollView)
         scrollView.addSubview(detailView)

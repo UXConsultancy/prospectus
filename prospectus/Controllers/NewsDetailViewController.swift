@@ -40,6 +40,9 @@ class NewsDetailViewController: UIViewController {
 
         self.view.addSubview(scrollView)
         scrollView.addSubview(detailView)
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = article.title
 
         setupViews()
     }

@@ -47,6 +47,8 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
         modelController = ModelController()
         
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         self.title = "S6C Prospectus"
         self.view.backgroundColor = UIColor.white
         self.collectionView.backgroundColor = UIColor.white

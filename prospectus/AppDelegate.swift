@@ -36,15 +36,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
         
         //change titlebar colours
-        UINavigationBar.appearance().barTintColor = UIColor(red: 102.0/255.0, green: 44.0/255.0, blue: 144.0/255.0, alpha: 1.0)
-        UINavigationBar.appearance().tintColor = UIColor.white
-        
-        let color = UIColor.white
-        let attributes: [NSAttributedStringKey: AnyObject] = [
-            NSAttributedStringKey.foregroundColor: color
-        ]
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = attributes
+//        UINavigationBar.appearance().barTintColor = UIColor(red: 102.0/255.0, green: 44.0/255.0, blue: 144.0/255.0, alpha: 1.0)
+//        UINavigationBar.appearance().tintColor = UIColor.white
+//        
+//        let color = UIColor.white
+//        let attributes: [NSAttributedStringKey: AnyObject] = [
+//            NSAttributedStringKey.foregroundColor: color
+//        ]
+//        UINavigationBar.appearance().tintColor = UIColor.white
+//        UINavigationBar.appearance().titleTextAttributes = attributes
 
         
         
