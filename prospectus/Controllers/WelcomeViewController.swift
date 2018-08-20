@@ -142,6 +142,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.articleTitle = news[indexPath.row].title
         cell.articleDate = news[indexPath.row].date
         cell.articleImage = news[indexPath.row].image!
+        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         return cell
     }
     

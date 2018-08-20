@@ -57,6 +57,7 @@ class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.articleTitle = courses[indexPath.row].title
         cell.articleImage = courses[indexPath.row].image
         cell.articleDate = courses[indexPath.row].examBoard
+        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         return cell
     }
     
