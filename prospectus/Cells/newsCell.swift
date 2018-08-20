@@ -37,7 +37,7 @@ class NewsCell: UITableViewCell {
     var articleDateView: UILabel = {
         var text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        text.font = UIFont.preferredFont(forTextStyle: .caption2)
         text.backgroundColor = UIColor.clear
         return text
     }()
