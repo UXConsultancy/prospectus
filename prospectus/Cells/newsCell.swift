@@ -30,6 +30,7 @@ class NewsCell: UITableViewCell {
         text.translatesAutoresizingMaskIntoConstraints = false
         text.font = UIFont.preferredFont(forTextStyle: .headline)
         text.backgroundColor = UIColor.clear
+        text.numberOfLines = 2
         return text
     }()
     
@@ -104,14 +105,15 @@ class NewsCell: UITableViewCell {
         articleTitleView.leftAnchor.constraint(equalTo: articleImageView.rightAnchor, constant: 12).isActive = true
         articleTitleView.rightAnchor.constraint(equalTo: articleView.rightAnchor, constant: -12).isActive = true
         articleTitleView.topAnchor.constraint(equalTo: articleView.topAnchor, constant: 0).isActive = true
-        articleTitleView.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        articleTitleView.heightAnchor.constraint(greaterThanOrEqualToConstant: 35).isActive = true
         
         // articleDateView
 //        articleDateView.leftAnchor.constraint(greaterThanOrEqualTo: articleImageView.leftAnchor).isActive = true
         articleDateView.leftAnchor.constraint(equalTo: articleImageView.rightAnchor, constant: 12).isActive = true
         articleDateView.rightAnchor.constraint(equalTo: articleView.rightAnchor, constant: -12).isActive = true
-        articleDateView.topAnchor.constraint(equalTo: articleTitleView.bottomAnchor, constant: 0).isActive = true
-        articleDateView.heightAnchor.constraint(equalToConstant: 35).isActive = true
+//        articleDateView.topAnchor.constraint(equalTo: articleTitleView.bottomAnchor, constant: 0).isActive = true
+//        articleDateView.heightAnchor.constraint(greaterThanOrEqualToConstant: 35).isActive = true
+        articleDateView.bottomAnchor.constraint(equalTo: articleImageView.bottomAnchor, constant: 0).isActive = true
     }
     
 }
