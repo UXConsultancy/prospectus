@@ -8,159 +8,76 @@
 
 import UIKit
 
-class CoursesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CoursesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var modelController: ModelController!
     var courses: [Course]! = []
     
-    let layout: UICollectionViewFlowLayout = {
-        var l = UICollectionViewFlowLayout()
-        l.scrollDirection = UICollectionViewScrollDirection.vertical
-        return l
-    }()
-
-    lazy var collectionView: UICollectionView = {
-        var cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.setCollectionViewLayout(layout, animated: true)
-        cv.delegate = self
-        cv.dataSource = self
-        cv.register(CourseCollectionViewCell.self, forCellWithReuseIdentifier: "courseCell")
-        cv.backgroundColor = UIColor.white
-        cv.delegate = self
-        return cv
-    }()
+    let courseCellId = "courseCell"
     
-//    let searchBar: UISearchBar = {
-//        var sb = UISearchBar()
-//        sb.translatesAutoresizingMaskIntoConstraints = false
-//        sb.backgroundColor = UIColor(displayP3Red: 27/255, green: 116/255, blue: 187/255, alpha: 1)
-//        return sb
-//    }()
+    lazy var coursesView: UITableView = {
+        var tv = UITableView()
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.register(NewsCell.self, forCellReuseIdentifier: courseCellId)
+        tv.delegate = self
+        tv.dataSource = self
+        return tv
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         modelController = ModelController()
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = true
         
-        self.title = "Courses"
-        self.view.backgroundColor = UIColor.white
+        title = "Courses"
+        view.backgroundColor = UIColor.white
 
-//        self.view.addSubview(searchBar)
-        self.view.addSubview(collectionView)
+        view.addSubview(coursesView)
         
         setupViews()
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollection), name: NSNotification.Name("gotCourses"), object: nil)
-        
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
-        leftSwipe.direction = .left
-        rightSwipe.direction = .right
-        self.view.addGestureRecognizer(leftSwipe)
-        self.view.addGestureRecognizer(rightSwipe)
-    }
-    
-    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
-        if sender.direction == .left {
-            self.tabBarController!.selectedIndex += 1
-        }
-        if sender.direction == .right {
-            self.tabBarController!.selectedIndex -= 1
-        }
     }
     
     @objc func reloadCollection() {
-        self.courses = modelController.courses
-        self.courses.sort(by: { $0.title! < $1.title!})
-        self.collectionView.reloadData()
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return getLayoutSize()
+        courses = modelController.courses
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        courses.sort(by: { $0.title!  < $1.title! })
+        coursesView.reloadData()
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courses.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "courseCell", for: indexPath) as! CourseCollectionViewCell
-        cell.courseBoard = self.courses[indexPath.row].examBoard
-        cell.courseTitle = self.courses[indexPath.row].title
-        cell.courseImage = self.courses[indexPath.row].image
-        cell.courseType = self.courses[indexPath.row].type
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: courseCellId, for: indexPath) as! NewsCell
+        cell.articleTitle = courses[indexPath.row].title
+        cell.articleImage = courses[indexPath.row].image
+        cell.articleDate = courses[indexPath.row].examBoard
         return cell
     }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = CourseDetailViewController()
         vc.course = courses[indexPath.row]
+        coursesView.deselectRow(at: indexPath, animated: true)
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     func setupViews() {
         
-//        searchBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        searchBar.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-//        searchBar.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-        
-        collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        collectionView.collectionViewLayout.invalidateLayout()
-    }
-    
-    
-    fileprivate func getLayoutSize() -> CGSize {
-        if (self.view.traitCollection.verticalSizeClass == .regular && self.view.traitCollection.horizontalSizeClass == .compact) {
-            let width = (self.view.bounds.width / 1)-20
-            let height = width / 1.25
-            return CGSize(width: width, height: height)
-        } else if (self.view.traitCollection.verticalSizeClass == .regular && self.view.traitCollection.horizontalSizeClass == .regular) {
-            var width = (self.view.bounds.width / 3)-20
-            if UIDevice().userInterfaceIdiom == .pad {
-                if UIDevice.current.orientation == .portrait {
-                    width = (self.view.bounds.width / 2)-20
-                }
-            }
-            let height = width / 1.25
-            return CGSize(width: width, height: height)
-        } else if (self.view.traitCollection.verticalSizeClass == .compact && self.view.traitCollection.horizontalSizeClass == .regular) {
-            let width = (self.view.bounds.width / 2)-20
-            let height = width / 1.25
-            return CGSize(width: width, height: height)
-        } else if (self.view.traitCollection.verticalSizeClass == .compact && self.view.traitCollection.horizontalSizeClass == .compact) {
-            var width = (self.view.bounds.width / 2)-20
-            if UIDevice().userInterfaceIdiom == .phone {
-                if UIScreen.main.nativeBounds.height == 2436 {
-                    width = (self.view.bounds.width / 2)-60
-                }
-            }
-            let height = width / 1.25
-            return CGSize(width: width, height: height)
-        } else {
-            return CGSize(width: self.view.bounds.width-20, height: self.view.bounds.width-20*1.25)
-        }
+        //coursesView
+        coursesView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        coursesView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+        coursesView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        coursesView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
     }
     
 }

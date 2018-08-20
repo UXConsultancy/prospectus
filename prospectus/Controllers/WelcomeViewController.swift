@@ -19,7 +19,6 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     let layout: UICollectionViewFlowLayout = {
         var l = UICollectionViewFlowLayout()
-        l.scrollDirection = .horizontal // not making a difference!
         return l
     }()
     
@@ -30,6 +29,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         cv.delegate = self
         cv.dataSource = self
         cv.register(ArticleCollectionViewCell.self, forCellWithReuseIdentifier: welcomeCellId)
+//        cv.isPagingEnabled = true // but not paging over correctly!
         return cv
     }()
     
@@ -39,7 +39,6 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         nv.delegate = self
         nv.dataSource = self
         nv.register(NewsCell.self, forCellReuseIdentifier: newsCellId)
-//        nv.backgroundColor = .red // remove after debug
         return nv
     }()
 
@@ -57,31 +56,20 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         layout.scrollDirection = UICollectionViewScrollDirection.horizontal
         
-        self.view.addSubview(collectionView)
         view.addSubview(newsView)
+        
+        let tableHeaderCell = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 250))
+        tableHeaderCell.backgroundColor = .red
+        tableHeaderCell.addSubview(collectionView)
+        newsView.tableHeaderView = tableHeaderCell
         
         setupViews()
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollection), name: NSNotification.Name("gotCourses"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollection), name: NSNotification.Name("gotNews"), object: nil)
-        
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
-        leftSwipe.direction = .left
-        rightSwipe.direction = .right
-        self.view.addGestureRecognizer(leftSwipe)
-        self.view.addGestureRecognizer(rightSwipe)
+
     }
-    
-    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
-        if sender.direction == .left {
-            self.tabBarController!.selectedIndex += 1
-        }
-        if sender.direction == .right {
-            self.tabBarController!.selectedIndex -= 1
-        }
-    }
-    
+
     @objc func reloadCollection() {
         self.articles = modelController.welcome
         self.news = modelController.news
@@ -129,14 +117,14 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func setupViews() {
 
-        collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        collectionView.topAnchor.constraint(equalTo: (newsView.tableHeaderView?.topAnchor)!, constant: 0).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: (newsView.tableHeaderView?.leadingAnchor)!, constant: 0).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: (newsView.tableHeaderView?.trailingAnchor)!, constant: 0).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: 250).isActive = true
         
-        newsView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 0).isActive = true
-        newsView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24).isActive = true
-        newsView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24).isActive = true
+        newsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        newsView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+        newsView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         newsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
     }
     

@@ -13,8 +13,6 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     
     var articleImage: String?
     var articleTitle: String?
-//    var articleDate: String?
-//    var articleBackgroundImage: String?
     
     var articleImageView: UIImageView = {
         var image = UIImageView()
@@ -45,8 +43,6 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         view.layer.cornerRadius = 10
         view.layer.masksToBounds = true
         view.backgroundColor = UIColor.clear
-        view.layer.borderWidth = 1.5
-        view.layer.borderColor = borderColor.withAlphaComponent(opacity).cgColor
         return view
     }()
 

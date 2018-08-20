@@ -20,30 +20,24 @@ class NewsCell: UITableViewCell {
         image.backgroundColor = UIColor.clear
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
-        image.layer.cornerRadius = 25
+        image.layer.cornerRadius = 5
         image.layer.masksToBounds = true
         return image
     }()
     
-    var articleTitleView: UITextView = {
-        var text = UITextView()
+    var articleTitleView: UILabel = {
+        var text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.font = UIFont.preferredFont(forTextStyle: .headline)
         text.backgroundColor = UIColor.clear
-//        text.textColor = UIColor(displayP3Red: 255/255, green: 250/255, blue: 250/255, alpha: 1)
-        text.isEditable = false
-        text.isScrollEnabled = false
         return text
     }()
     
-    var articleDateView: UITextView = {
-        var text = UITextView()
+    var articleDateView: UILabel = {
+        var text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.font = UIFont.preferredFont(forTextStyle: .subheadline)
         text.backgroundColor = UIColor.clear
-//        text.textColor = UIColor(displayP3Red: 255/255, green: 250/255, blue: 250/255, alpha: 1)
-        text.isEditable = false
-        text.isScrollEnabled = false
         return text
     }()
     
@@ -103,7 +97,7 @@ class NewsCell: UITableViewCell {
         articleImageView.leftAnchor.constraint(equalTo: articleView.leftAnchor, constant: 6).isActive = true
 //        articleImageView.rightAnchor.constraint(equalTo: articleView.rightAnchor, constant: 0).isActive = true
 //        articleImageView.bottomAnchor.constraint(equalTo: articleView.bottomAnchor, constant: 0).isActive = true
-        articleImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        articleImageView.widthAnchor.constraint(equalToConstant: 65).isActive = true
         articleImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         // articleTitleView
@@ -113,8 +107,8 @@ class NewsCell: UITableViewCell {
         articleTitleView.heightAnchor.constraint(equalToConstant: 35).isActive = true
         
         // articleDateView
-        articleDateView.leftAnchor.constraint(greaterThanOrEqualTo: articleImageView.leftAnchor).isActive = true
-//        articleDateView.leftAnchor.constraint(equalTo: articleImageView.rightAnchor, constant: 12).isActive = true
+//        articleDateView.leftAnchor.constraint(greaterThanOrEqualTo: articleImageView.leftAnchor).isActive = true
+        articleDateView.leftAnchor.constraint(equalTo: articleImageView.rightAnchor, constant: 12).isActive = true
         articleDateView.rightAnchor.constraint(equalTo: articleView.rightAnchor, constant: -12).isActive = true
         articleDateView.topAnchor.constraint(equalTo: articleTitleView.bottomAnchor, constant: -6).isActive = true
         articleDateView.heightAnchor.constraint(equalToConstant: 35).isActive = true
