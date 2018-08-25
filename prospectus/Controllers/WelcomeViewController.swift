@@ -100,6 +100,12 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: welcomeCellId, for: indexPath) as! ArticleCollectionViewCell
         cell.articleTitle = self.articles[indexPath.row].title
         cell.articleImage = self.articles[indexPath.row].image
+        
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.shadowRadius = 5
+        
         return cell
     }
     
