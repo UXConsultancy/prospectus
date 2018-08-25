@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Controllers/WelcomeViewController.swift"
-            timestampString = "556880808.060029"
+            timestampString = "556883297.113089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171">
+            startingLineNumber = "163"
+            endingLineNumber = "163">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -184,13 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prospectus/Controllers/WelcomeViewController.swift"
-            timestampString = "556880808.0605299"
+            timestampString = "556883297.113745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "getLayoutSize()"
-            landmarkType = "7">
+            startingLineNumber = "163"
+            endingLineNumber = "163">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

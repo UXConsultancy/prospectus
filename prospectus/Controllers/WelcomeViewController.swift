@@ -29,7 +29,6 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         cv.delegate = self
         cv.dataSource = self
         cv.register(ArticleCollectionViewCell.self, forCellWithReuseIdentifier: welcomeCellId)
-//        cv.isPagingEnabled = true // but not paging over correctly!
         return cv
     }()
     
@@ -85,16 +84,12 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
         return getLayoutSize()
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return -5
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -151,7 +146,7 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     fileprivate func getLayoutSize() -> CGSize {
-        let cellScaling: CGFloat = 0.90
+        let cellScaling: CGFloat = 0.95
         let screenSize = UIScreen.main.bounds
         let cellWidth = floor(screenSize.width * cellScaling)
         let cellHeight = floor(collectionView.bounds.height * cellScaling) / cellScaling
