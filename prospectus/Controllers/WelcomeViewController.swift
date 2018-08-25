@@ -151,9 +151,11 @@ class WelcomeViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     fileprivate func getLayoutSize() -> CGSize {
-        let width = view.bounds.width*0.90
-        let height = (view.bounds.width*0.95)/1.667
-        return CGSize(width: width, height: height)
+        let cellScaling: CGFloat = 0.90
+        let screenSize = UIScreen.main.bounds
+        let cellWidth = floor(screenSize.width * cellScaling)
+        let cellHeight = floor(collectionView.bounds.height * cellScaling) / cellScaling
+        return CGSize(width: cellWidth, height: cellHeight)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
